@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
   root 'regions#index'
   devise_for :users
-  resources :regions, only: [:show]
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :regions, only: [:index, :show]
+
+  namespace :api do
+    namespace :v1 do
+      resources :regions, only: [:show]
+      resources :comments, only: [:create, :new]
+    end
+  end
+
 end

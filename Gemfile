@@ -34,6 +34,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'httparty', '~> 0.13.7'
 
+gem 'yelp', '~> 2.1', '>= 2.1.5'
+
 group :development, :test do
 
 end

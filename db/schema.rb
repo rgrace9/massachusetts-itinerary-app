@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_31_012325) do
+ActiveRecord::Schema.define(version: 2019_02_01_012742) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,14 +24,23 @@ ActiveRecord::Schema.define(version: 2019_01_31_012325) do
     t.index ["region_id"], name: "index_cities_on_region_id"
   end
 
-  create_table "excursions", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "description", null: false
-    t.bigint "region_id", null: false
+  create_table "comments", force: :cascade do |t|
+    t.text "body", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_excursions_on_name", unique: true
-    t.index ["region_id"], name: "index_excursions_on_region_id"
+    t.bigint "user_id", null: false
+    t.bigint "excursion_id", null: false
+    t.index ["excursion_id"], name: "index_comments_on_excursion_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "excursions", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "description", null: false
+    t.bigint "city_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["city_id"], name: "index_excursions_on_city_id"
   end
 
   create_table "regions", force: :cascade do |t|

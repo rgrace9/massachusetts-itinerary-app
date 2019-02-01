@@ -5,12 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-greater_boston = Region.create(name: "Greater Boston Area")
-western = Region.create(name: "Western")
-central = Region.create(name: "Central")
-northeast = Region.create(name: "Northeast")
-cape = Region.create(name: "Cape & Islands")
-southeast = Region.create(name: "Southeast")
+greater_boston = Region.create(name: "Greater Boston Area", image: "link")
+western = Region.create(name: "Western", image: "link")
+central = Region.create(name: "Central", image: "link")
+northeast = Region.create(name: "Northeast", image: "link")
+cape = Region.create(name: "Cape & Islands", image: "link")
+southeast = Region.create(name: "Southeast", image: "link")
 
 
 city_list = [
