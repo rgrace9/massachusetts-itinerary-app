@@ -36,8 +36,12 @@ gem 'httparty', '~> 0.13.7'
 
 gem 'yelp', '~> 2.1', '>= 2.1.5'
 
-group :development, :test do
+gem 'carrierwave'
 
+gem 'fog'
+
+group :development, :test do
+    gem 'dotenv-rails'
 end
 
 group :development do
