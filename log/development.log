@@ -1,0 +1,2308 @@
+  [1m[35m (554.8ms)[0m  [1m[35mCREATE DATABASE "travel-itinerary_development" ENCODING = 'unicode'[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.3.3/bin/rake:22
+  [1m[35m (410.7ms)[0m  [1m[35mCREATE DATABASE "travel-itinerary_test" ENCODING = 'unicode'[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.3.3/bin/rake:22
+  [1m[35m (20.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.3.3/bin/rake:22
+  [1m[35m (25.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.3.3/bin/rake:22
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.3.3/bin/rake:22
+Migrating to DeviseCreateUsers (20190122220505)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.3.3/bin/rake:22
+  [1m[35m (53.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190122220505_devise_create_users.rb:5
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20190122220505_devise_create_users.rb:39
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  ↳ db/migrate/20190122220505_devise_create_users.rb:40
+  [1m[36mActiveRecord::SchemaMigration Create (3.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190122220505"]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.3.3/bin/rake:22
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.3.3/bin/rake:22
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.3.3/bin/rake:22
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.3.3/bin/rake:22
+  [1m[36mActiveRecord::InternalMetadata Create (35.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-01-22 22:25:11.440865"], ["updated_at", "2019-01-22 22:25:11.440865"]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.3.3/bin/rake:22
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.3.3/bin/rake:22
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.3.3/bin/rake:22
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.3.3/bin/rake:22
+Started GET "/" for 127.0.0.1 at 2019-01-22 17:53:14 -0500
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (2.1ms)
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/rebeccawilliams/challenges/travel-itinerary/public/packs
+Completed 200 OK in 16430ms (Views: 16425.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-01-22 17:53:51 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (78.3ms)
+Completed 200 OK in 319ms (Views: 183.2ms | ActiveRecord: 116.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-22 17:58:03 -0500
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 91ms (Views: 87.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-01-22 17:58:14 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 157ms (Views: 155.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/passqoed/edit" for 127.0.0.1 at 2019-01-22 17:58:44 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/users/passqoed/edit"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+webpacker (3.5.5) lib/webpacker/dev_server_proxy.rb:22:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/users/password/edit" for 127.0.0.1 at 2019-01-22 17:58:51 -0500
+Processing by Devise::PasswordsController#edit as HTML
+Redirected to http://localhost:3000/users/sign_in
+Filter chain halted as :assert_reset_token_passed rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-01-22 17:58:51 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 88ms (Views: 87.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-01-23 09:08:05 -0500
+  
+PG::ConnectionBad (could not connect to server: Connection refused
+	Is the server running on host "localhost" (::1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Connection refused
+	Is the server running on host "localhost" (fe80::1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?
+):
+  
+pg (1.1.4) lib/pg.rb:56:in `initialize'
+pg (1.1.4) lib/pg.rb:56:in `new'
+pg (1.1.4) lib/pg.rb:56:in `connect'
+activerecord (5.2.2) lib/active_record/connection_adapters/postgresql_adapter.rb:692:in `connect'
+activerecord (5.2.2) lib/active_record/connection_adapters/postgresql_adapter.rb:223:in `initialize'
+activerecord (5.2.2) lib/active_record/connection_adapters/postgresql_adapter.rb:48:in `new'
+activerecord (5.2.2) lib/active_record/connection_adapters/postgresql_adapter.rb:48:in `postgresql_connection'
+activerecord (5.2.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:811:in `new_connection'
+activerecord (5.2.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:855:in `checkout_new_connection'
+activerecord (5.2.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:834:in `try_to_checkout_new_connection'
+activerecord (5.2.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:795:in `acquire_connection'
+activerecord (5.2.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:523:in `checkout'
+activerecord (5.2.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:382:in `connection'
+activerecord (5.2.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:1010:in `retrieve_connection'
+activerecord (5.2.2) lib/active_record/connection_handling.rb:118:in `retrieve_connection'
+activerecord (5.2.2) lib/active_record/connection_handling.rb:90:in `connection'
+activerecord (5.2.2) lib/active_record/migration.rb:554:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+webpacker (3.5.5) lib/webpacker/dev_server_proxy.rb:22:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-01-23 09:08:38 -0500
+  
+PG::ConnectionBad (could not connect to server: Connection refused
+	Is the server running on host "localhost" (::1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Connection refused
+	Is the server running on host "localhost" (fe80::1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?
+):
+  
+pg (1.1.4) lib/pg.rb:56:in `initialize'
+pg (1.1.4) lib/pg.rb:56:in `new'
+pg (1.1.4) lib/pg.rb:56:in `connect'
+activerecord (5.2.2) lib/active_record/connection_adapters/postgresql_adapter.rb:692:in `connect'
+activerecord (5.2.2) lib/active_record/connection_adapters/postgresql_adapter.rb:223:in `initialize'
+activerecord (5.2.2) lib/active_record/connection_adapters/postgresql_adapter.rb:48:in `new'
+activerecord (5.2.2) lib/active_record/connection_adapters/postgresql_adapter.rb:48:in `postgresql_connection'
+activerecord (5.2.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:811:in `new_connection'
+activerecord (5.2.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:855:in `checkout_new_connection'
+activerecord (5.2.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:834:in `try_to_checkout_new_connection'
+activerecord (5.2.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:795:in `acquire_connection'
+activerecord (5.2.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:523:in `checkout'
+activerecord (5.2.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:382:in `connection'
+activerecord (5.2.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:1010:in `retrieve_connection'
+activerecord (5.2.2) lib/active_record/connection_handling.rb:118:in `retrieve_connection'
+activerecord (5.2.2) lib/active_record/connection_handling.rb:90:in `connection'
+activerecord (5.2.2) lib/active_record/migration.rb:554:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+webpacker (3.5.5) lib/webpacker/dev_server_proxy.rb:22:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-01-23 09:10:01 -0500
+  
+PG::ConnectionBad (could not connect to server: Connection refused
+	Is the server running on host "localhost" (::1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Connection refused
+	Is the server running on host "localhost" (fe80::1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?
+):
+  
+pg (1.1.4) lib/pg.rb:56:in `initialize'
+pg (1.1.4) lib/pg.rb:56:in `new'
+pg (1.1.4) lib/pg.rb:56:in `connect'
+activerecord (5.2.2) lib/active_record/connection_adapters/postgresql_adapter.rb:692:in `connect'
+activerecord (5.2.2) lib/active_record/connection_adapters/postgresql_adapter.rb:223:in `initialize'
+activerecord (5.2.2) lib/active_record/connection_adapters/postgresql_adapter.rb:48:in `new'
+activerecord (5.2.2) lib/active_record/connection_adapters/postgresql_adapter.rb:48:in `postgresql_connection'
+activerecord (5.2.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:811:in `new_connection'
+activerecord (5.2.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:855:in `checkout_new_connection'
+activerecord (5.2.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:834:in `try_to_checkout_new_connection'
+activerecord (5.2.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:795:in `acquire_connection'
+activerecord (5.2.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:523:in `checkout'
+activerecord (5.2.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:382:in `connection'
+activerecord (5.2.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:1010:in `retrieve_connection'
+activerecord (5.2.2) lib/active_record/connection_handling.rb:118:in `retrieve_connection'
+activerecord (5.2.2) lib/active_record/connection_handling.rb:90:in `connection'
+activerecord (5.2.2) lib/active_record/migration.rb:554:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+webpacker (3.5.5) lib/webpacker/dev_server_proxy.rb:22:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-01-23 09:11:00 -0500
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.2) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.2) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+webpacker (3.5.5) lib/webpacker/dev_server_proxy.rb:22:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE DATABASE "travel-itinerary_development" ENCODING = 'unicode'[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE DATABASE "travel-itinerary_test" ENCODING = 'unicode'[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Started GET "/" for 127.0.0.1 at 2019-01-28 20:43:43 -0500
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.2) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.2) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+webpacker (3.5.5) lib/webpacker/dev_server_proxy.rb:22:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to AddRoleToUsers (20190123140341)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (7.1ms)[0m  [1m[35mALTER TABLE "users" ADD "role" character varying DEFAULT 'member' NOT NULL[0m
+  ↳ db/migrate/20190123140341_add_role_to_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190123140341"]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Started GET "/" for 127.0.0.1 at 2019-01-28 20:44:05 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (0.4ms)
+Started GET "/" for 127.0.0.1 at 2019-01-28 20:44:09 -0500
+Completed 200 OK in 5494ms (Views: 5492.1ms | ActiveRecord: 0.0ms)
+
+
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 59ms (Views: 56.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-28 20:44:51 -0500
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 80ms (Views: 77.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-28 20:45:12 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 3191ms (Views: 3186.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-28 20:45:23 -0500
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 118ms (Views: 114.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-28 20:45:40 -0500
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 88ms (Views: 86.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-01-28 20:45:48 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (31.3ms)
+Completed 200 OK in 159ms (Views: 113.4ms | ActiveRecord: 31.6ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateRegions (20190129020749)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (22.9ms)[0m  [1m[35mCREATE TABLE "regions" ("id" bigserial primary key, "name" character varying NOT NULL, "description" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190129020749_create_regions.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190129020749"]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (3.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateRegions (20190129020749)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (6.2ms)[0m  [1m[35mDROP TABLE "regions"[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::SchemaMigration Destroy (1.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20190129020749"]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateRegions (20190129020749)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "regions" ("id" bigserial primary key, "name" character varying NOT NULL, "description" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190129020749_create_regions.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190129020749"]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (1.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (159.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "travel-itinerary_development"[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (153.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "travel-itinerary_test"[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (462.8ms)[0m  [1m[35mCREATE DATABASE "travel-itinerary_development" ENCODING = 'unicode'[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (332.0ms)[0m  [1m[35mCREATE DATABASE "travel-itinerary_test" ENCODING = 'unicode'[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (11.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to DeviseCreateUsers (20190122220505)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190122220505_devise_create_users.rb:5
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20190122220505_devise_create_users.rb:39
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  ↳ db/migrate/20190122220505_devise_create_users.rb:40
+  [1m[36mActiveRecord::SchemaMigration Create (2.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190122220505"]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to AddRoleToUsers (20190123140341)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "users" ADD "role" character varying DEFAULT 'member' NOT NULL[0m
+  ↳ db/migrate/20190123140341_add_role_to_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (13.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190123140341"]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateRegions (20190129020749)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE TABLE "regions" ("id" bigserial primary key, "name" character varying NOT NULL, "description" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190129020749_create_regions.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190129020749"]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-01-29 02:17:57.129461"], ["updated_at", "2019-01-29 02:17:57.129461"]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateRegions (20190129020749)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (8.1ms)[0m  [1m[35mDROP TABLE "regions"[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.9ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20190129020749"]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateRegions (20190129020749)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE TABLE "regions" ("id" bigserial primary key, "name" character varying NOT NULL, "description" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190129020749_create_regions.rb:3
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_regions_on_name" ON "regions"  ("name")[0m
+  ↳ db/migrate/20190129020749_create_regions.rb:10
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190129020749"]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateRegions (20190129020749)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.4ms)[0m  [1m[35mDROP INDEX  "index_regions_on_name"[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.1ms)[0m  [1m[35mDROP TABLE "regions"[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::SchemaMigration Destroy (1.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20190129020749"]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateRegions (20190130132509)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (41.4ms)[0m  [1m[35mCREATE TABLE "regions" ("id" bigserial primary key, "name" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190130132509_create_regions.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (2.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190130132509"]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (2.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateRegions (20190130132509)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (5.6ms)[0m  [1m[35mDROP TABLE "regions"[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::SchemaMigration Destroy (1.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20190130132509"]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateRegions (20190130132509)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "regions" ("id" bigserial primary key, "name" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190130132509_create_regions.rb:3
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_regions_on_name" ON "regions"  ("name")[0m
+  ↳ db/migrate/20190130132509_create_regions.rb:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190130132509"]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateExcursions (20190130133117)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateExcursions (20190130133117)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateExcursions (20190130133117)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "excursions" ("id" bigserial primary key, "name" character varying NOT NULL, "description" character varying NOT NULL, "region_id" bigint NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190130133117_create_excursions.rb:3
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_excursions_on_region_id" ON "excursions"  ("region_id")[0m
+  ↳ db/migrate/20190130133117_create_excursions.rb:3
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_excursions_on_name" ON "excursions"  ("name")[0m
+  ↳ db/migrate/20190130133117_create_excursions.rb:11
+  [1m[36mActiveRecord::SchemaMigration Create (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190130133117"]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateCities (20190130234237)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (15.5ms)[0m  [1m[35mCREATE TABLE "cities" ("id" bigserial primary key, "name" character varying NOT NULL, "region_id" bigint NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190130234237_create_cities.rb:3
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE  INDEX  "index_cities_on_region_id" ON "cities"  ("region_id")[0m
+  ↳ db/migrate/20190130234237_create_cities.rb:3
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_cities_on_name" ON "cities"  ("name")[0m
+  ↳ db/migrate/20190130234237_create_cities.rb:10
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190130234237"]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (4.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mRegion Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM "regions" WHERE "regions"."name" = $1 LIMIT $2[0m  [["name", "Greater Boston Area"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mRegion Create (1.0ms)[0m  [1m[32mINSERT INTO "regions" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Greater Boston Area"], ["created_at", "2019-01-31 00:28:06.415968"], ["updated_at", "2019-01-31 00:28:06.415968"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mRegion Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "regions" WHERE "regions"."name" = $1 LIMIT $2[0m  [["name", "Western"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mRegion Create (1.8ms)[0m  [1m[32mINSERT INTO "regions" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Western"], ["created_at", "2019-01-31 00:28:06.422169"], ["updated_at", "2019-01-31 00:28:06.422169"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mRegion Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "regions" WHERE "regions"."name" = $1 LIMIT $2[0m  [["name", "Central"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mRegion Create (0.5ms)[0m  [1m[32mINSERT INTO "regions" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Central"], ["created_at", "2019-01-31 00:28:06.428858"], ["updated_at", "2019-01-31 00:28:06.428858"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mRegion Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "regions" WHERE "regions"."name" = $1 LIMIT $2[0m  [["name", "Northeast"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mRegion Create (0.4ms)[0m  [1m[32mINSERT INTO "regions" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Northeast"], ["created_at", "2019-01-31 00:28:06.432609"], ["updated_at", "2019-01-31 00:28:06.432609"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mRegion Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "regions" WHERE "regions"."name" = $1 LIMIT $2[0m  [["name", "Cape & Islands"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mRegion Create (0.4ms)[0m  [1m[32mINSERT INTO "regions" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Cape & Islands"], ["created_at", "2019-01-31 00:28:06.435906"], ["updated_at", "2019-01-31 00:28:06.435906"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mRegion Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "regions" WHERE "regions"."name" = $1 LIMIT $2[0m  [["name", "Southeast"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mRegion Create (0.5ms)[0m  [1m[32mINSERT INTO "regions" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Southeast"], ["created_at", "2019-01-31 00:28:06.438949"], ["updated_at", "2019-01-31 00:28:06.438949"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (3.8ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Boston"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.9ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Boston"], ["region_id", 1], ["created_at", "2019-01-31 00:28:06.487628"], ["updated_at", "2019-01-31 00:28:06.487628"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Newton"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Newton"], ["region_id", 1], ["created_at", "2019-01-31 00:28:06.491675"], ["updated_at", "2019-01-31 00:28:06.491675"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Cambridge"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Cambridge"], ["region_id", 1], ["created_at", "2019-01-31 00:28:06.495679"], ["updated_at", "2019-01-31 00:28:06.495679"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Brookline"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Brookline"], ["region_id", 1], ["created_at", "2019-01-31 00:28:06.499333"], ["updated_at", "2019-01-31 00:28:06.499333"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Arlington"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.5ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Arlington"], ["region_id", 1], ["created_at", "2019-01-31 00:28:06.504676"], ["updated_at", "2019-01-31 00:28:06.504676"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Somerville"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.6ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Somerville"], ["region_id", 1], ["created_at", "2019-01-31 00:28:06.508766"], ["updated_at", "2019-01-31 00:28:06.508766"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Needham"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.7ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Needham"], ["region_id", 1], ["created_at", "2019-01-31 00:28:06.513703"], ["updated_at", "2019-01-31 00:28:06.513703"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Foxborough"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Foxborough"], ["region_id", 1], ["created_at", "2019-01-31 00:28:06.517995"], ["updated_at", "2019-01-31 00:28:06.517995"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Lexington"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Lexington"], ["region_id", 1], ["created_at", "2019-01-31 00:28:06.521818"], ["updated_at", "2019-01-31 00:28:06.521818"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Springfield"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Springfield"], ["region_id", 2], ["created_at", "2019-01-31 00:28:06.526142"], ["updated_at", "2019-01-31 00:28:06.526142"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Williamstown"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Williamstown"], ["region_id", 2], ["created_at", "2019-01-31 00:28:06.529889"], ["updated_at", "2019-01-31 00:28:06.529889"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Stockbridge"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Stockbridge"], ["region_id", 2], ["created_at", "2019-01-31 00:28:06.533129"], ["updated_at", "2019-01-31 00:28:06.533129"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Lenox"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.5ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Lenox"], ["region_id", 2], ["created_at", "2019-01-31 00:28:06.536962"], ["updated_at", "2019-01-31 00:28:06.536962"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Great Barrington"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.5ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Great Barrington"], ["region_id", 2], ["created_at", "2019-01-31 00:28:06.540686"], ["updated_at", "2019-01-31 00:28:06.540686"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Worcester"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.8ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Worcester"], ["region_id", 3], ["created_at", "2019-01-31 00:28:06.545077"], ["updated_at", "2019-01-31 00:28:06.545077"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Boylston"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.7ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Boylston"], ["region_id", 3], ["created_at", "2019-01-31 00:28:06.552061"], ["updated_at", "2019-01-31 00:28:06.552061"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Sutton"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (1.0ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Sutton"], ["region_id", 3], ["created_at", "2019-01-31 00:28:06.556522"], ["updated_at", "2019-01-31 00:28:06.556522"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Sturbridge"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (1.3ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Sturbridge"], ["region_id", 3], ["created_at", "2019-01-31 00:28:06.563653"], ["updated_at", "2019-01-31 00:28:06.563653"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Bolton"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Bolton"], ["region_id", 3], ["created_at", "2019-01-31 00:28:06.569191"], ["updated_at", "2019-01-31 00:28:06.569191"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Gloucester"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.5ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Gloucester"], ["region_id", 4], ["created_at", "2019-01-31 00:28:06.572817"], ["updated_at", "2019-01-31 00:28:06.572817"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Lawrence"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.5ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Lawrence"], ["region_id", 4], ["created_at", "2019-01-31 00:28:06.577333"], ["updated_at", "2019-01-31 00:28:06.577333"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Lowell"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.6ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Lowell"], ["region_id", 4], ["created_at", "2019-01-31 00:28:06.580983"], ["updated_at", "2019-01-31 00:28:06.580983"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Rockport"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.5ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Rockport"], ["region_id", 4], ["created_at", "2019-01-31 00:28:06.585231"], ["updated_at", "2019-01-31 00:28:06.585231"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Salem"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.6ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Salem"], ["region_id", 4], ["created_at", "2019-01-31 00:28:06.589404"], ["updated_at", "2019-01-31 00:28:06.589404"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Hyannis"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Hyannis"], ["region_id", 5], ["created_at", "2019-01-31 00:28:06.593211"], ["updated_at", "2019-01-31 00:28:06.593211"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Provincetown"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Provincetown"], ["region_id", 5], ["created_at", "2019-01-31 00:28:06.597017"], ["updated_at", "2019-01-31 00:28:06.597017"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Falmouth"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Falmouth"], ["region_id", 5], ["created_at", "2019-01-31 00:28:06.600279"], ["updated_at", "2019-01-31 00:28:06.600279"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Nantucket"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.5ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Nantucket"], ["region_id", 5], ["created_at", "2019-01-31 00:28:06.604106"], ["updated_at", "2019-01-31 00:28:06.604106"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Martha's Vineyard"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Martha's Vineyard"], ["region_id", 5], ["created_at", "2019-01-31 00:28:06.608089"], ["updated_at", "2019-01-31 00:28:06.608089"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+Started GET "/" for 127.0.0.1 at 2019-01-30 19:29:57 -0500
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Processing by RegionsController#index as HTML
+  Rendering regions/index.html.erb within layouts/application
+  [1m[36mRegion Load (1.2ms)[0m  [1m[34mSELECT "regions".* FROM "regions"[0m
+  ↳ app/views/regions/index.html.erb:4
+  Rendered regions/index.html.erb within layouts/application (18.3ms)
+Started GET "/" for 127.0.0.1 at 2019-01-30 19:30:01 -0500
+Processing by RegionsController#index as HTML
+  Rendering regions/index.html.erb within layouts/application
+  [1m[36mRegion Load (1.8ms)[0m  [1m[34mSELECT "regions".* FROM "regions"[0m
+  ↳ app/views/regions/index.html.erb:4
+  Rendered regions/index.html.erb within layouts/application (505.2ms)
+Completed 200 OK in 5745ms (Views: 5145.9ms | ActiveRecord: 500.0ms)
+
+
+Completed 200 OK in 10035ms (Views: 10022.5ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/regions/1" for 127.0.0.1 at 2019-01-30 19:30:14 -0500
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for RegionsController):
+  
+actionpack (5.2.2) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.2) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+webpacker (3.5.5) lib/webpacker/dev_server_proxy.rb:22:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to AddImageToRegions (20190131004036)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to AddImageToRegions (20190131004036)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to AddImageToRegions (20190131004036)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to AddImageToRegions (20190131004036)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to AddImageToRegions (20190131004036)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to AddImageToRegions (20190131004036)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to AddImageToRegions (20190131004036)
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to AddImageToRegions (20190131004036)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (7.1ms)[0m  [1m[35mALTER TABLE "regions" ADD "image" character varying[0m
+  ↳ db/migrate/20190131004036_add_image_to_regions.rb:3
+  [1m[35m (6.4ms)[0m  [1m[35mALTER TABLE "regions" ALTER "image" SET NOT NULL[0m
+  ↳ db/migrate/20190131004036_add_image_to_regions.rb:4
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to AddImageToRegions (20190131004036)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "regions" ADD "image" character varying[0m
+  ↳ db/migrate/20190131004036_add_image_to_regions.rb:3
+  [1m[35m (2.1ms)[0m  [1m[35mALTER TABLE "regions" ALTER "image" SET NOT NULL[0m
+  ↳ db/migrate/20190131004036_add_image_to_regions.rb:4
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to AddImageToRegions (20190131004036)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "regions" ADD "image" character varying[0m
+  ↳ db/migrate/20190131004036_add_image_to_regions.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "regions" ADD "description" character varying[0m
+  ↳ db/migrate/20190131004036_add_image_to_regions.rb:4
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "regions" ALTER "image" SET NOT NULL[0m
+  ↳ db/migrate/20190131004036_add_image_to_regions.rb:5
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to AddImageToRegions (20190131004036)
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "regions" ADD "image" character varying[0m
+  ↳ db/migrate/20190131004036_add_image_to_regions.rb:3
+  [1m[35m (1.9ms)[0m  [1m[35mALTER TABLE "regions" ALTER "image" SET NOT NULL[0m
+  ↳ db/migrate/20190131004036_add_image_to_regions.rb:4
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to AddImageToRegions (20190131004036)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "regions" ADD "image" character varying[0m
+  ↳ db/migrate/20190131004036_add_image_to_regions.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190131004036"]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (2.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to MakeImageNotNull (20190131012325)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (3.3ms)[0m  [1m[35mALTER TABLE "regions" ALTER "image" SET NOT NULL[0m
+  ↳ db/migrate/20190131012325_make_image_not_null.rb:3
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to MakeImageNotNull (20190131012325)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (3.0ms)[0m  [1m[33mUPDATE "regions" SET "image"='1' WHERE "image" IS NULL[0m
+  ↳ db/migrate/20190131012325_make_image_not_null.rb:3
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "regions" ALTER "image" SET NOT NULL[0m
+  ↳ db/migrate/20190131012325_make_image_not_null.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190131012325"]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateComments (20190131142036)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (14.7ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "body" text NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "user_id" bigint NOT NULL, "excursion_id" bigint NOT NULL)[0m
+  ↳ db/migrate/20190131142036_create_comments.rb:3
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE  INDEX  "index_comments_on_user_id" ON "comments"  ("user_id")[0m
+  ↳ db/migrate/20190131142036_create_comments.rb:3
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_comments_on_excursion_id" ON "comments"  ("excursion_id")[0m
+  ↳ db/migrate/20190131142036_create_comments.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190131142036"]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to RemoveRegionsFromExcursions (20190131223912)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (6.3ms)[0m  [1m[35mALTER TABLE "excursions" DROP COLUMN "regions"[0m
+  ↳ db/migrate/20190131223912_remove_regions_from_excursions.rb:3
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to RemoveRegionsFromExcursions (20190131223912)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.8ms)[0m  [1m[35mALTER TABLE "excursions" DROP COLUMN "regions_id"[0m
+  ↳ db/migrate/20190131223912_remove_regions_from_excursions.rb:3
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to RemoveRegionsFromExcursions (20190131223912)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to RemoveRegionsFromExcursions (20190131223912)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to RemoveRegionsFromExcursions (20190131223912)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to RemoveRegionsFromExcursions (20190131223912)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (3.9ms)[0m  [1m[35mALTER TABLE "excursions" DROP COLUMN "region_id"[0m
+  ↳ db/migrate/20190131223912_remove_regions_from_excursions.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190131223912"]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (1.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to AddCityToExcursions (20190131225219)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (5.5ms)[0m  [1m[35mALTER TABLE "excursions" ADD "cities" character varying NOT NULL[0m
+  ↳ db/migrate/20190131225219_add_city_to_excursions.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190131225219"]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to AddCityToExcursions (20190131225219)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "excursions" DROP COLUMN "cities"[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::SchemaMigration Destroy (2.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20190131225219"]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to RemoveRegionsFromExcursions (20190131223912)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to AddCityToExcursions (20190131225219)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to AddCityToExcursions (20190131225219)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.5ms)[0m  [1m[35mALTER TABLE "excursions" ADD CONSTRAINT "fk_rails_d5a6d4d7a6"
+FOREIGN KEY ("city_id")
+  REFERENCES "city" ("id")
+[0m
+  ↳ db/migrate/20190131225219_add_city_to_excursions.rb:3
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to AddCityToExcursions (20190131225219)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.7ms)[0m  [1m[35mALTER TABLE "excursions" ADD CONSTRAINT "fk_rails_d5a6d4d7a6"
+FOREIGN KEY ("city_id")
+  REFERENCES "cities" ("id")
+[0m
+  ↳ db/migrate/20190131225219_add_city_to_excursions.rb:3
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to AddCityToExcursions (20190131225219)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.9ms)[0m  [1m[35mALTER TABLE "excursions" ADD CONSTRAINT "fk_rails_d5a6d4d7a6"
+FOREIGN KEY ("city_id")
+  REFERENCES "cities" ("id")
+[0m
+  ↳ db/migrate/20190131225219_add_city_to_excursions.rb:3
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to AddCityToExcursions (20190131225219)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "excursions" ADD "cities_id" bigint[0m
+  ↳ db/migrate/20190131225219_add_city_to_excursions.rb:3
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE  INDEX  "index_excursions_on_cities_id" ON "excursions"  ("cities_id")[0m
+  ↳ db/migrate/20190131225219_add_city_to_excursions.rb:3
+  [1m[35m (14.2ms)[0m  [1m[35mALTER TABLE "excursions" ADD CONSTRAINT "fk_rails_0373b445d8"
+FOREIGN KEY ("cities_id")
+  REFERENCES "cities" ("id")
+[0m
+  ↳ db/migrate/20190131225219_add_city_to_excursions.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190131225219"]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to AddCityToExcursions (20190131225219)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (3.1ms)[0m  [1m[35mALTER TABLE "excursions" DROP CONSTRAINT "fk_rails_0373b445d8"[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "excursions" DROP COLUMN "cities_id"[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.7ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20190131225219"]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to AddCityToExcursions (20190131225219)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "excursions" ADD "city_id" bigint NOT NULL[0m
+  ↳ db/migrate/20190131225219_add_city_to_excursions.rb:3
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE  INDEX  "index_excursions_on_city_id" ON "excursions"  ("city_id")[0m
+  ↳ db/migrate/20190131225219_add_city_to_excursions.rb:3
+  [1m[35m (3.1ms)[0m  [1m[35mALTER TABLE "excursions" ADD CONSTRAINT "fk_rails_d5a6d4d7a6"
+FOREIGN KEY ("city_id")
+  REFERENCES "cities" ("id")
+[0m
+  ↳ db/migrate/20190131225219_add_city_to_excursions.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190131225219"]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRegion Exists (5.2ms)[0m  [1m[34mSELECT  1 AS one FROM "regions" WHERE "regions"."name" = $1 LIMIT $2[0m  [["name", "Western"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRegion Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "regions" WHERE "regions"."name" = $1 LIMIT $2[0m  [["name", "Western"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRegion Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "regions" WHERE "regions"."name" = $1 LIMIT $2[0m  [["name", "Western"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRegion Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "regions" WHERE "regions"."name" = $1 LIMIT $2[0m  [["name", "Western"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRegion Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "regions" WHERE "regions"."name" = $1 LIMIT $2[0m  [["name", "x"], ["LIMIT", 1]]
+  [1m[36mRegion Create (0.8ms)[0m  [1m[32mINSERT INTO "regions" ("name", "created_at", "updated_at", "image") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "x"], ["created_at", "2019-01-31 23:06:28.798118"], ["updated_at", "2019-01-31 23:06:28.798118"], ["image", "yy"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRegion Load (0.5ms)[0m  [1m[34mSELECT "regions".* FROM "regions"[0m
+  [1m[36mCity Load (1.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" ORDER BY "cities"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mExcursion Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "excursions" WHERE "excursions"."name" = $1 LIMIT $2[0m  [["name", "love"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (154.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "travel-itinerary_development"[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (150.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "travel-itinerary_test"[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (462.8ms)[0m  [1m[35mCREATE DATABASE "travel-itinerary_development" ENCODING = 'unicode'[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (279.8ms)[0m  [1m[35mCREATE DATABASE "travel-itinerary_test" ENCODING = 'unicode'[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (26.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to DeviseCreateUsers (20190122220505)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (9.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190122220505_devise_create_users.rb:5
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20190122220505_devise_create_users.rb:39
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  ↳ db/migrate/20190122220505_devise_create_users.rb:40
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190122220505"]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to AddRoleToUsers (20190123140341)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "users" ADD "role" character varying DEFAULT 'member' NOT NULL[0m
+  ↳ db/migrate/20190123140341_add_role_to_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190123140341"]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateRegions (20190130132509)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "regions" ("id" bigserial primary key, "name" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190130132509_create_regions.rb:3
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_regions_on_name" ON "regions"  ("name")[0m
+  ↳ db/migrate/20190130132509_create_regions.rb:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190130132509"]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateExcursions (20190130133117)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE TABLE "excursions" ("id" bigserial primary key, "name" character varying NOT NULL, "description" character varying NOT NULL, "region_id" bigint NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190130133117_create_excursions.rb:3
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE  INDEX  "index_excursions_on_region_id" ON "excursions"  ("region_id")[0m
+  ↳ db/migrate/20190130133117_create_excursions.rb:3
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_excursions_on_name" ON "excursions"  ("name")[0m
+  ↳ db/migrate/20190130133117_create_excursions.rb:11
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190130133117"]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateCities (20190130234237)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "cities" ("id" bigserial primary key, "name" character varying NOT NULL, "region_id" bigint NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190130234237_create_cities.rb:3
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_cities_on_region_id" ON "cities"  ("region_id")[0m
+  ↳ db/migrate/20190130234237_create_cities.rb:3
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_cities_on_name" ON "cities"  ("name")[0m
+  ↳ db/migrate/20190130234237_create_cities.rb:10
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190130234237"]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to AddImageToRegions (20190131004036)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "regions" ADD "image" character varying[0m
+  ↳ db/migrate/20190131004036_add_image_to_regions.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190131004036"]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to MakeImageNotNull (20190131012325)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[33mUPDATE "regions" SET "image"='1' WHERE "image" IS NULL[0m
+  ↳ db/migrate/20190131012325_make_image_not_null.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "regions" ALTER "image" SET NOT NULL[0m
+  ↳ db/migrate/20190131012325_make_image_not_null.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190131012325"]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateComments (20190131142036)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "body" text NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "user_id" bigint NOT NULL, "excursion_id" bigint NOT NULL)[0m
+  ↳ db/migrate/20190131142036_create_comments.rb:3
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE  INDEX  "index_comments_on_user_id" ON "comments"  ("user_id")[0m
+  ↳ db/migrate/20190131142036_create_comments.rb:3
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE  INDEX  "index_comments_on_excursion_id" ON "comments"  ("excursion_id")[0m
+  ↳ db/migrate/20190131142036_create_comments.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (2.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190131142036"]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to RemoveRegionsFromExcursions (20190131223912)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (7.3ms)[0m  [1m[35mALTER TABLE "excursions" DROP COLUMN "region_id"[0m
+  ↳ db/migrate/20190131223912_remove_regions_from_excursions.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190131223912"]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to AddCityToExcursions (20190131225219)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "excursions" ADD "city_id" bigint NOT NULL[0m
+  ↳ db/migrate/20190131225219_add_city_to_excursions.rb:3
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE  INDEX  "index_excursions_on_city_id" ON "excursions"  ("city_id")[0m
+  ↳ db/migrate/20190131225219_add_city_to_excursions.rb:3
+  [1m[35m (6.8ms)[0m  [1m[35mALTER TABLE "excursions" ADD CONSTRAINT "fk_rails_d5a6d4d7a6"
+FOREIGN KEY ("city_id")
+  REFERENCES "cities" ("id")
+[0m
+  ↳ db/migrate/20190131225219_add_city_to_excursions.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190131225219"]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (1.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-01-31 23:10:50.150989"], ["updated_at", "2019-01-31 23:10:50.150989"]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mRegion Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "regions" WHERE "regions"."name" = $1 LIMIT $2[0m  [["name", "Greater Boston Area"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mRegion Create (3.5ms)[0m  [1m[32mINSERT INTO "regions" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Greater Boston Area"], ["created_at", "2019-01-31 23:10:54.373970"], ["updated_at", "2019-01-31 23:10:54.373970"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mRegion Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "regions" WHERE "regions"."name" = $1 LIMIT $2[0m  [["name", "Greater Boston Area"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mRegion Create (0.9ms)[0m  [1m[32mINSERT INTO "regions" ("name", "created_at", "updated_at", "image") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Greater Boston Area"], ["created_at", "2019-01-31 23:11:37.229388"], ["updated_at", "2019-01-31 23:11:37.229388"], ["image", "link"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mRegion Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "regions" WHERE "regions"."name" = $1 LIMIT $2[0m  [["name", "Western"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mRegion Create (0.4ms)[0m  [1m[32mINSERT INTO "regions" ("name", "created_at", "updated_at", "image") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Western"], ["created_at", "2019-01-31 23:11:37.233965"], ["updated_at", "2019-01-31 23:11:37.233965"], ["image", "link"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mRegion Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "regions" WHERE "regions"."name" = $1 LIMIT $2[0m  [["name", "Central"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mRegion Create (0.4ms)[0m  [1m[32mINSERT INTO "regions" ("name", "created_at", "updated_at", "image") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Central"], ["created_at", "2019-01-31 23:11:37.237286"], ["updated_at", "2019-01-31 23:11:37.237286"], ["image", "link"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mRegion Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "regions" WHERE "regions"."name" = $1 LIMIT $2[0m  [["name", "Northeast"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mRegion Create (0.4ms)[0m  [1m[32mINSERT INTO "regions" ("name", "created_at", "updated_at", "image") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Northeast"], ["created_at", "2019-01-31 23:11:37.240863"], ["updated_at", "2019-01-31 23:11:37.240863"], ["image", "link"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mRegion Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "regions" WHERE "regions"."name" = $1 LIMIT $2[0m  [["name", "Cape & Islands"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mRegion Create (0.4ms)[0m  [1m[32mINSERT INTO "regions" ("name", "created_at", "updated_at", "image") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Cape & Islands"], ["created_at", "2019-01-31 23:11:37.244029"], ["updated_at", "2019-01-31 23:11:37.244029"], ["image", "link"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mRegion Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "regions" WHERE "regions"."name" = $1 LIMIT $2[0m  [["name", "Southeast"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mRegion Create (0.4ms)[0m  [1m[32mINSERT INTO "regions" ("name", "created_at", "updated_at", "image") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Southeast"], ["created_at", "2019-01-31 23:11:37.247290"], ["updated_at", "2019-01-31 23:11:37.247290"], ["image", "link"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Boston"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.8ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Boston"], ["region_id", 2], ["created_at", "2019-01-31 23:11:37.272472"], ["updated_at", "2019-01-31 23:11:37.272472"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Newton"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Newton"], ["region_id", 2], ["created_at", "2019-01-31 23:11:37.276898"], ["updated_at", "2019-01-31 23:11:37.276898"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Cambridge"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.5ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Cambridge"], ["region_id", 2], ["created_at", "2019-01-31 23:11:37.280699"], ["updated_at", "2019-01-31 23:11:37.280699"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Brookline"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Brookline"], ["region_id", 2], ["created_at", "2019-01-31 23:11:37.284871"], ["updated_at", "2019-01-31 23:11:37.284871"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Arlington"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.5ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Arlington"], ["region_id", 2], ["created_at", "2019-01-31 23:11:37.296879"], ["updated_at", "2019-01-31 23:11:37.296879"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Somerville"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Somerville"], ["region_id", 2], ["created_at", "2019-01-31 23:11:37.300410"], ["updated_at", "2019-01-31 23:11:37.300410"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Needham"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Needham"], ["region_id", 2], ["created_at", "2019-01-31 23:11:37.304017"], ["updated_at", "2019-01-31 23:11:37.304017"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Foxborough"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Foxborough"], ["region_id", 2], ["created_at", "2019-01-31 23:11:37.307361"], ["updated_at", "2019-01-31 23:11:37.307361"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Lexington"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Lexington"], ["region_id", 2], ["created_at", "2019-01-31 23:11:37.310854"], ["updated_at", "2019-01-31 23:11:37.310854"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Springfield"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Springfield"], ["region_id", 3], ["created_at", "2019-01-31 23:11:37.314144"], ["updated_at", "2019-01-31 23:11:37.314144"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Williamstown"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.5ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Williamstown"], ["region_id", 3], ["created_at", "2019-01-31 23:11:37.317562"], ["updated_at", "2019-01-31 23:11:37.317562"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Stockbridge"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Stockbridge"], ["region_id", 3], ["created_at", "2019-01-31 23:11:37.321081"], ["updated_at", "2019-01-31 23:11:37.321081"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Lenox"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Lenox"], ["region_id", 3], ["created_at", "2019-01-31 23:11:37.324618"], ["updated_at", "2019-01-31 23:11:37.324618"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Great Barrington"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Great Barrington"], ["region_id", 3], ["created_at", "2019-01-31 23:11:37.328041"], ["updated_at", "2019-01-31 23:11:37.328041"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Worcester"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Worcester"], ["region_id", 4], ["created_at", "2019-01-31 23:11:37.331446"], ["updated_at", "2019-01-31 23:11:37.331446"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Boylston"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Boylston"], ["region_id", 4], ["created_at", "2019-01-31 23:11:37.334885"], ["updated_at", "2019-01-31 23:11:37.334885"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Sutton"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Sutton"], ["region_id", 4], ["created_at", "2019-01-31 23:11:37.338280"], ["updated_at", "2019-01-31 23:11:37.338280"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Sturbridge"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Sturbridge"], ["region_id", 4], ["created_at", "2019-01-31 23:11:37.341587"], ["updated_at", "2019-01-31 23:11:37.341587"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Bolton"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Bolton"], ["region_id", 4], ["created_at", "2019-01-31 23:11:37.344984"], ["updated_at", "2019-01-31 23:11:37.344984"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Gloucester"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Gloucester"], ["region_id", 5], ["created_at", "2019-01-31 23:11:37.348582"], ["updated_at", "2019-01-31 23:11:37.348582"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Lawrence"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Lawrence"], ["region_id", 5], ["created_at", "2019-01-31 23:11:37.352102"], ["updated_at", "2019-01-31 23:11:37.352102"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Lowell"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Lowell"], ["region_id", 5], ["created_at", "2019-01-31 23:11:37.355522"], ["updated_at", "2019-01-31 23:11:37.355522"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Rockport"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Rockport"], ["region_id", 5], ["created_at", "2019-01-31 23:11:37.359073"], ["updated_at", "2019-01-31 23:11:37.359073"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Salem"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Salem"], ["region_id", 5], ["created_at", "2019-01-31 23:11:37.362451"], ["updated_at", "2019-01-31 23:11:37.362451"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Hyannis"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Hyannis"], ["region_id", 6], ["created_at", "2019-01-31 23:11:37.366001"], ["updated_at", "2019-01-31 23:11:37.366001"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Provincetown"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Provincetown"], ["region_id", 6], ["created_at", "2019-01-31 23:11:37.369369"], ["updated_at", "2019-01-31 23:11:37.369369"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Falmouth"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Falmouth"], ["region_id", 6], ["created_at", "2019-01-31 23:11:37.372739"], ["updated_at", "2019-01-31 23:11:37.372739"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Nantucket"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Nantucket"], ["region_id", 6], ["created_at", "2019-01-31 23:11:37.376455"], ["updated_at", "2019-01-31 23:11:37.376455"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mCity Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = $1 LIMIT $2[0m  [["name", "Martha's Vineyard"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mCity Create (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Martha's Vineyard"], ["region_id", 6], ["created_at", "2019-01-31 23:11:37.379990"], ["updated_at", "2019-01-31 23:11:37.379990"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mExcursion Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "excursions" WHERE "excursions"."name" = $1 LIMIT $2[0m  [["name", "hi"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mExcursion Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "excursions" WHERE "excursions"."name" = $1 LIMIT $2[0m  [["name", "hi"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mExcursion Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "excursions" WHERE "excursions"."name" = $1 LIMIT $2[0m  [["name", "hi"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (6.8ms)[0m  [1m[35mDROP TABLE "excursions"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to DropExcursions (20190131231842)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.8ms)[0m  [1m[35mDROP TABLE "excursions"[0m
+  ↳ db/migrate/20190131231842_drop_excursions.rb:3
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to DropExcursions (20190131231842)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.6ms)[0m  [1m[35mDROP TABLE "excursions"[0m
+  ↳ db/migrate/20190131231842_drop_excursions.rb:3
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (1.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateExcursions (20190201012742)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (12.7ms)[0m  [1m[35mCREATE TABLE "excursions" ("id" bigserial primary key, "name" character varying NOT NULL, "description" text NOT NULL, "city_id" bigint NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190201012742_create_excursions.rb:3
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_excursions_on_city_id" ON "excursions"  ("city_id")[0m
+  ↳ db/migrate/20190201012742_create_excursions.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190201012742"]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mExcursion Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM "excursions" WHERE "excursions"."name" = $1 LIMIT $2[0m  [["name", "bobert"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mExcursion Load (0.6ms)[0m  [1m[34mSELECT "excursions".* FROM "excursions"[0m
+  [1m[36mCity Load (1.5ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to AddProfilePhotoToUsers (20190202145647)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (11.0ms)[0m  [1m[35mALTER TABLE "users" ADD "profile_photo" character varying[0m
+  ↳ db/migrate/20190202145647_add_profile_photo_to_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190202145647"]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (1.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(3544739113170260880)[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/rake-12.3.2/lib/rake/task.rb:273
+Started GET "/" for 127.0.0.1 at 2019-02-02 10:28:53 -0500
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rebeccawilliams/.gem/ruby/2.4.5/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Processing by RegionsController#index as HTML
+  Rendering regions/index.html.erb within layouts/application
+  [1m[36mRegion Load (3.7ms)[0m  [1m[34mSELECT "regions".* FROM "regions"[0m
+  ↳ app/views/regions/index.html.erb:4
+  Rendered regions/index.html.erb within layouts/application (26.2ms)
+Completed 200 OK in 6080ms (Views: 6053.9ms | ActiveRecord: 12.2ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-02-02 10:29:08 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (35.2ms)
+Completed 200 OK in 164ms (Views: 105.2ms | ActiveRecord: 14.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-02 10:29:19 -0500
+Processing by RegionsController#index as HTML
+  Rendering regions/index.html.erb within layouts/application
+  [1m[36mRegion Load (0.7ms)[0m  [1m[34mSELECT "regions".* FROM "regions"[0m
+  ↳ app/views/regions/index.html.erb:4
+  Rendered regions/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 76ms (Views: 71.4ms | ActiveRecord: 0.7ms)
+
+
