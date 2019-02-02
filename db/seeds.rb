@@ -5,12 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-greater_boston = Region.create(name: "Greater Boston Area", image: "link")
-western = Region.create(name: "Western", image: "link")
-central = Region.create(name: "Central", image: "link")
-northeast = Region.create(name: "Northeast", image: "link")
-cape = Region.create(name: "Cape & Islands", image: "link")
-southeast = Region.create(name: "Southeast", image: "link")
+greater_boston = Region.create(name: "Greater Boston Area", image: "https://s3.amazonaws.com/massachusetts-itinerary-app-development/boston-01.jpg")
+western = Region.create(name: "Western", image: "https://s3.amazonaws.com/massachusetts-itinerary-app-development/berkshires.jpeg")
+central = Region.create(name: "Central", image: "https://s3.amazonaws.com/massachusetts-itinerary-app-development/1200px-Bankroft_Tower_central_ma.jpg")
+northeast = Region.create(name: "Northeast", image: "https://s3.amazonaws.com/massachusetts-itinerary-app-development/northeast_ma.jpg")
+cape = Region.create(name: "Cape & Islands", image: "https://s3.amazonaws.com/massachusetts-itinerary-app-development/marthas-vineyard.jpg")
+southeast = Region.create(name: "Southeast", image: "https://s3.amazonaws.com/massachusetts-itinerary-app-development/massachusetts-plymouth.jpg")
 
 
 city_list = [
