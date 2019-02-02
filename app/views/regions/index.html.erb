@@ -1,9 +1,16 @@
-<h2> Regions </h2>
+<h2 id="region-index-heading"> Regions </h2>
 
-<ul>
   <%@regions.each do |region|%>
-    <li>
-      <%= link_to region.name, region_path(region)%>
-      </li>
+  <div class="region">
+  <div class="region-index-tile small-4 columns">
+    <div class="region-image">
+      <img src= "<%=region.image%>" />
+    </div>
+    <div class="region-index-name">
+      <h3>
+        <%= link_to region.name, region_path(region)%>
+      </h3>
+    </div>
+  </div>
+  </div>
   <%end%>
-  </ul>
