@@ -8,6 +8,6 @@ feature "visitor sees a list of all regions" do
     visit regions_path
 
     expect(page).to have_content region_1.name
-    expect(page).to have_link region_2.name
+    # expect(page).to have_content region_2.image
   end
 end
