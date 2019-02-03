@@ -3,5 +3,5 @@ class Excursion < ApplicationRecord
   validates :name, uniqueness: true
 
   belongs_to :city
-  belongs_to :region
+  # belongs_to :region
 end
