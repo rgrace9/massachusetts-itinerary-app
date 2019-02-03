@@ -1,0 +1,14 @@
+<h1 class="region-show"><%=@region.name%></h1>
+<ul>
+  <%@cities.each do |city| %>
+    <li>
+      <%=city.name%>
+      <%city.excursions.each do |excursion|%>
+        <li>
+          <%=excursion.name%>
+        </li>
+      <%end%>
+
+    </li>
+  <%end%>
+  </ul>

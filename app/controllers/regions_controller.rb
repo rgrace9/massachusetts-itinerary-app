@@ -5,7 +5,6 @@ class RegionsController < ApplicationController
 
   def show
     @region = Region.find(params[:id])
-    @excursions = @region.excursions
     @cities = @region.cities
   end
 end
