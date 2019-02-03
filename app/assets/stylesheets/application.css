@@ -80,6 +80,10 @@ body {
   overflow: hidden;
 }
 
+.region-show {
+  padding: 50px;
+  margin: auto;
+}
 .user-form {
   padding: 10px;
   margin: auto;

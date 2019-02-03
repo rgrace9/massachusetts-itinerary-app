@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :regions, only: [:show]
       resources :comments, only: [:create, :new]
+      resources :excursions
+        post 'excursions/search', to: 'excursions#search'
     end
   end
 
