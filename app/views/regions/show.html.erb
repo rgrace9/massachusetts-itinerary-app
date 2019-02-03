@@ -1,14 +1,11 @@
-<h1 class="region-show"><%=@region.name%></h1>
-<ul>
+<div class="region-show">
+<h1><%=@region.name%></h1>
   <%@cities.each do |city| %>
-    <li>
-      <%=city.name%>
+      <h2><%= link_to city.name, city_path(city)%></h2>
+      <ul>
       <%city.excursions.each do |excursion|%>
-        <li>
-          <%=excursion.name%>
-        </li>
+        <li><h4><%=excursion.name%></h4></li>
       <%end%>
-
-    </li>
+      </ul>
   <%end%>
-  </ul>
+</div>
