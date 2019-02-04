@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   root 'regions#index'
 
-  get "/excursions", to: "excursions#search"
   devise_for :users
+
+
+
   resources :regions, only: [:index, :show] do
     resources :cities, only: [:index, :show]
   end
@@ -15,10 +17,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :regions, only: [:show]
-      resources :comments, only: [:create, :new]
-      resources :excursions
-        post 'excursions/search', to: 'excursions#search'
+      get "/excursions", to: "excursions#search"
     end
   end
 
