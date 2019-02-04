@@ -21,6 +21,11 @@ a {
   font-size: 25px;
 }
 
+h1 {
+  color: black;
+  font-family: "Montserrat", sans-serif;
+}
+
 body {
   background: #c1e0ed;
 }
