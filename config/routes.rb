@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :cities, only: [:index, :show]
   end
 
-  resources :excursions, only: :index
+  resources :excursions, only: [:index, :show]
 
   resources :cities, only: [:index, :show] do
     resources :excursions, only: [:index, :show, :new, :create]
@@ -17,7 +17,9 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      get "/excursions", to: "excursions#search"
+      resources :cities, only: [:show] do
+        get "/excursions", to: "excursions#search"
+      end
     end
   end
 

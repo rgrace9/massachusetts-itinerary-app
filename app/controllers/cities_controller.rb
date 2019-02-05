@@ -3,4 +3,5 @@ class CitiesController < ApplicationController
     @city = City.find(params[:id])
     @excursions = @city.excursions
   end
+
 end

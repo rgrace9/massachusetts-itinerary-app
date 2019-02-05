@@ -4,5 +4,7 @@ class ExcursionsController < ApplicationController
     @excursions = Excursion.all
   end
 
+  def show
+  end
 
 end
