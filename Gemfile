@@ -32,9 +32,9 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
-gem "http"
+gem 'http'
 
-# gem 'httparty', '~> 0.13.7'
+gem 'vcr', '~> 3.0', '>= 3.0.3'
 
 gem 'carrierwave'
 

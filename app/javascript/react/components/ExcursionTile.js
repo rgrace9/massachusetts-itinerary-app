@@ -1,8 +1,8 @@
 import React from "react";
 
-const ExcursionTile = () => (
+const ExcursionTile = props => (
   <div>
-    <h1>Excursion Tile</h1>
+    <h1>{props.business.name}</h1>
   </div>
 );
 
