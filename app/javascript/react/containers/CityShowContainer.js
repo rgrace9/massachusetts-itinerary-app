@@ -9,7 +9,7 @@ class CityShowContainer extends Component {
     };
   }
   componentDidMount() {
-    fetch(`/api/v1/excursions`)
+    fetch(`/api/v1/cities/${this.props.params.id}/excursions`)
       .then(response => {
         if (response.ok) {
           return response;
@@ -28,7 +28,9 @@ class CityShowContainer extends Component {
 
   render() {
     let businesses = this.state.businesses.map((business, index) => {
-      return <ExcursionTile key={index} id={index} business={business} />;
+      return (
+        <ExcursionTile key={index + 1} id={index + 1} business={business} />
+      );
     });
 
     return <div>{businesses}</div>;
