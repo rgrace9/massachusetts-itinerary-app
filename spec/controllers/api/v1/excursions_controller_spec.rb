@@ -2,6 +2,9 @@
 #
 # RSpec.describe Api::V1::ExcursionsController, type: :controller do
 #   describe 'GET#search' do
+#     before(:each) do
+#
+#     end
 #     let!(:greater_boston) { Region.create!(name: "Greater Boston Area", image: "https://s3.amazonaws.com/massachusetts-itinerary-app-development/boston-01.jpg") }
 #     let!(:newton) { City.create!(name: "Newton", region: greater_boston) }
 #

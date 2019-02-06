@@ -29,7 +29,6 @@ class ExcursionParser
 
     response = HTTP.auth("Bearer #{ENV["YELP_API_KEY"]}").get(url, params: params)
     businesses_data = response.parse["businesses"]
-
     businesses_data.each do |business|
       new_hash = {
         name: business["name"],

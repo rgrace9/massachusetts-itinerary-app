@@ -40,8 +40,6 @@ gem 'carrierwave'
 
 gem 'fog'
 
-gem 'dotenv-rails'
-
 group :development, :test do
 
 end
