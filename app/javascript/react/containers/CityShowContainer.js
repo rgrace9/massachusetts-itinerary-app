@@ -5,10 +5,12 @@ class CityShowContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      name: "",
       businesses: []
     };
   }
   componentDidMount() {
+
     fetch(`/api/v1/cities/${this.props.params.id}/excursions`)
       .then(response => {
         if (response.ok) {
@@ -21,7 +23,10 @@ class CityShowContainer extends Component {
       })
       .then(response => response.json())
       .then(businesses => {
-        this.setState({ businesses: businesses["data"] });
+        this.setState({
+          name: businesses["data"][0]["city"],
+          businesses: businesses["data"]
+        });
       })
       .catch(error => console.log(`Error in fetch: ${error.message}`));
   }
@@ -33,7 +38,14 @@ class CityShowContainer extends Component {
       );
     });
 
-    return <div>{businesses}</div>;
+    return (
+      <div>
+      <div>
+        <h1>{this.state.name}</h1>
+      </div>
+        <div>{businesses}</div>
+      </div>
+    );
   }
 }
 
