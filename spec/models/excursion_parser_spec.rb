@@ -37,7 +37,7 @@ RSpec.describe ExcursionParser, type: :model do
           "distance"=>1188.6282803942572}]}
       url = "https://api.yelp.com/v3/businesses/search"
       params = {
-        term: "dinner",
+        term: "parks",
         location: "Newton, MA",
         limit: 10
       }

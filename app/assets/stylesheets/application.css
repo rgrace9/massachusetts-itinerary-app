@@ -10,15 +10,35 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require foundation_and_overrides
  *= require_tree .
  *= require_self
- *= require foundation_and_overrides
+
 
  */
+.heading {
+  text-align: center;
+}
+.index-tile-font {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+}
 a {
   color: black;
   font-family: "Montserrat", sans-serif;
   font-size: 25px;
+}
+.review-tile {
+  padding: 10px;
+  margin: 10px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.region-picture {
+  object-fit: cover;
+  object-position: center;
+  height: 400px;
+  width: 100%;
 }
 
 h1 {
@@ -55,7 +75,6 @@ body {
 }
 .region-image {
   flex-shrink: 0;
-  /* height: 200px; */
   min-width: 100%;
   min-height: 50%;
   align-items: center;
@@ -65,25 +84,40 @@ body {
   text-align: center;
   font-family: "Montserrat", sans-serif;
 }
-/* .region {
-  display: flex;
 
-  align-items: center;
-  overflow: hidden;
-} */
+.excursion-tile-wrapper {
+  padding: 0px;
+}
+.excursion-tile {
+  padding: 10px;
+  margin: 10px;
+}
 
-.region-index-name {
+.region-name {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+}
+.region-index-heading {
   padding: 10px;
   text-align: center;
+  font-family: "Montserrat", sans-serif;
 }
 .region-index-tile {
-  height: 250px;
+  height: 500px;
   border: 2px;
-  /* border: 2px solid black; */
   padding: 10px;
   margin: auto;
   overflow: hidden;
 }
+
+/* .region-index-tile {
+  width: 50%;
+}
+
+.region-index-tile:after {
+  display: block;
+  padding-bottom: 100%;
+} */
 
 .region-show {
   padding: 50px;
@@ -122,7 +156,6 @@ body {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
-  color: #fff;
   padding: 15px;
   -moz-transition: all 0.4s ease-in-out 0s;
   -webkit-transition: all 0.4s ease-in-out 0s;
@@ -153,6 +186,13 @@ body {
   padding-top: 2px;
   display: none;
 }
+
 .hvrbox.active .hvrbox-text_mobile {
   display: block;
+}
+
+.selection-form {
+  display: inline-block;
+  text-align: center;
+  align-items: center;
 }

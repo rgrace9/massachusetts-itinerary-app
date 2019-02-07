@@ -9,14 +9,14 @@ class Api::V1::ExcursionsController < Api::V1::ApiController
     render json: { data: excursion_parser.data }
   end
 
-  def show
-    # term = params[:term]
-    # excursion = Excursion.find(params[:id])
-    # location = excursion.city
-    # excursion_parser = ExcursionParser.new
-    # excursion_parser.search(term, location)
-    # render json: { data: excursion_parser.data }
-  end
 
 
 end
+
+# create an Events API controller (or maybe a different one?)
+# this controller will contain a def create
+# this def create will
+# check whether venue is already in db
+#   if not, save it to db
+# create an Event using the venue, the itinerary, and the time/date
+# (all of which are passed as part of the fetch body)
