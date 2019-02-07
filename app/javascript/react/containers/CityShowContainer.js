@@ -1,16 +1,18 @@
 import React, { Component } from "react";
 import { Link } from "react-router";
-import ExcursionTile from "../components/ExcursionTile";
+import ExcursionFormContainer from "./ExcursionFormContainer";
+
 class CityShowContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
-      businesses: []
+      businesses: [],
+      events: []
     };
+    this.addEvent = this.addEvent.bind(this);
   }
-  componentDidMount() {
 
+  componentDidMount() {
     fetch(`/api/v1/cities/${this.props.params.id}/excursions`)
       .then(response => {
         if (response.ok) {
@@ -24,9 +26,35 @@ class CityShowContainer extends Component {
       .then(response => response.json())
       .then(businesses => {
         this.setState({
-          name: businesses["data"][0]["city"],
           businesses: businesses["data"]
         });
+      })
+      .catch(error => console.log(`Error in fetch: ${error.message}`));
+  }
+
+  addEvent(formPayload) {
+    fetch("/api/v1/events", {
+      credentials: "same-origin",
+      method: "POST",
+      body: JSON.stringify(formPayload),
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      }
+    })
+      .then(response => {
+        if (response.ok) {
+          return response;
+        } else {
+          let errorMessage = `${response.status} (${response.statusText})`,
+            error = new Error(errorMessage);
+          throw error;
+        }
+      })
+      .then(response => response.json())
+      .then(newEvent => {
+        let currentEvents = this.state.events;
+        this.setState({ events: currentEvents.concat(newEvent) });
       })
       .catch(error => console.log(`Error in fetch: ${error.message}`));
   }
@@ -34,18 +62,18 @@ class CityShowContainer extends Component {
   render() {
     let businesses = this.state.businesses.map((business, index) => {
       return (
-        <ExcursionTile key={index + 1} id={index + 1} business={business} />
+        <div>
+          <ExcursionFormContainer
+            key={business.business_id}
+            id={index + 1}
+            business={business}
+            addEvent={this.addEvent}
+          />
+        </div>
       );
     });
 
-    return (
-      <div>
-      <div>
-        <h1>{this.state.name}</h1>
-      </div>
-        <div>{businesses}</div>
-      </div>
-    );
+    return <div>{businesses}</div>;
   }
 }
 

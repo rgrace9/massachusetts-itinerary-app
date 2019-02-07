@@ -7,7 +7,7 @@ SEARCH_PATH = "/v3/businesses/search"
 BUSINESS_PATH = "/v3/businesses/"
 
 DEFAULT_BUSINESS_ID = "yelp-boston"
-DEFAULT_TERM = "dinner"
+DEFAULT_TERM = "parks"
 DEFAULT_LOCATION = "Boston, MA"
 SEARCH_LIMIT = 10
 
@@ -31,14 +31,15 @@ class ExcursionParser
     businesses_data = response.parse["businesses"]
     businesses_data.each do |business|
       new_hash = {
+        business_id: business["id"],
         name: business["name"],
         image: business["image_url"],
         url: business["url"],
-        categories: business["categories"],
         price: business["price"],
-        coordinates: business["coordinates"],
+        latitude: business["coordinates"]["latitude"],
+        longitude: business["coordinates"]["longitude"],
         city: business["location"]["city"],
-        display_address: business["location"]["display_address"]
+        display_address: business["location"]["display_address"].join(", ")
 
       }
       @data << new_hash

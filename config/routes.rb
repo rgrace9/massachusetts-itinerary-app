@@ -25,8 +25,15 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :excursions, only: :show
+      resources :events, only: [:index, :create, :new, :show]
+      end
     end
-  end
+
+
+  # namespace :api do
+  #   namespace :v1 do
+  #     resources :excursions, only: :show
+  #   end
+  # end
 
 end

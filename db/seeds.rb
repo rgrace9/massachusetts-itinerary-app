@@ -57,13 +57,3 @@ city_list = [
 city_list.each do |name, region|
   City.create(name: name, region: region)
 end
-
-excursions = [
-  ["Faneuil Hall Marketplace", "Historic indoor-outdoor shopping", 1],
-  ["Boston Common", "Venerable park with historic cred", 1],
-  ["Old South Church", "A historic United Church of Christ congregation first organized in 1669. Its present building was designed in the Gothic Revival style by Charles Amos Cummings and Willard T. Sears, completed in 1873, and amplified by the architects Allen & Collens between 1935–1937", 1]
-]
-
-excursions.each do |name, description, city_id|
-  Excursion.create(name: name, description: description, city_id: city_id)
-end

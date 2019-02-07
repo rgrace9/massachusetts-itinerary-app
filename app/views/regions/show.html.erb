@@ -2,10 +2,5 @@
 <h1><%=@region.name%></h1>
   <%@cities.each do |city| %>
       <h2><%= link_to city.name, city_path(city)%></h2>
-      <ul>
-      <%city.excursions.each do |excursion|%>
-        <li><h4><%=excursion.name%></h4></li>
-      <%end%>
-      </ul>
   <%end%>
 </div>

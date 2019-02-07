@@ -46,15 +46,8 @@ describe("CityShowContainer", () => {
       body: response
     });
 
-    wrapper = mount(<CityShowContainer params={params} />)
+    wrapper = mount(<CityShowContainer params={params} />);
   });
 
   afterEach(fetchMock.restore);
-
-  it("renders the name of the city", done => {
-    setTimeout(() => {
-      expect(wrapper.find("h1").first().text()).toBe("Boston");
-      done();
-    }, 0);
-  });
 });
