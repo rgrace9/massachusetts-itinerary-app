@@ -34,7 +34,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'http'
 
-gem 'vcr', '~> 3.0', '>= 3.0.3'
+gem 'active_model_serializers'
 
 gem 'carrierwave'
 

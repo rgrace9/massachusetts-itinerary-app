@@ -57,3 +57,15 @@ city_list = [
 city_list.each do |name, region|
   City.create(name: name, region: region)
 end
+
+
+user_list = [
+  [ "rob@test.com", "password", "password", "Rob", "Smith" ],
+  [ "bill@test.com", "password", "password", "Bill", "Jackson" ],
+  [ "jen@test.com", "password", "password", "Jenny", "Adams" ],
+  [ "emily@test.com", "password", "password", "Emily", "Roberts" ]
+]
+
+user_list.each do |email, password, password_confirmation, first_name, last_name|
+  User.create( email: email, password: password, password_confirmation: password_confirmation, first_name: first_name, last_name: last_name )
+end

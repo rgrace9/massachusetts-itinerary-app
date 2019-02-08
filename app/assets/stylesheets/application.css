@@ -16,6 +16,15 @@
 
 
  */
+
+.profile-img {
+  text-align: center;
+}
+.profile-img img {
+  width: 70%;
+  height: 100%;
+}
+
 .heading {
   text-align: center;
 }
@@ -33,7 +42,9 @@ a {
   margin: 10px;
   font-family: "Montserrat", sans-serif;
 }
-
+.user-show-text {
+  font-family: "Montserrat", sans-serif;
+}
 .region-picture {
   object-fit: cover;
   object-position: center;
