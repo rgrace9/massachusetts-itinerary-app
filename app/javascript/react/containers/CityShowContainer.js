@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router";
 import ExcursionTile from "./ExcursionTile";
 import ExcursionShowContainer from "./ExcursionShowContainer";
-
+import Map from "../components/Map"
 class CityShowContainer extends Component {
   constructor(props) {
     super(props);
@@ -85,8 +85,14 @@ class CityShowContainer extends Component {
     });
 
     return (
-    <div className="large-2 columns left grid-container rows">
-    {businesses}</div>
+    <div>
+      <div className="column small-6 left grid-container rows">
+        <div className="excursion-tile-wrapper">
+        {businesses}</div>
+      </div>
+      <div className="google-map column small-6 right"><Map /></div>
+
+    </div>
   )
 
   }

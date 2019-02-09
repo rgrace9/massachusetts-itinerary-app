@@ -76,7 +76,6 @@ class UserShowContainer extends Component {
     });
     return (
       <div className="show-container row">
-
         <div className="column small-6">
           <h2 className="user-show-text">
             {this.state.firstName} {this.state.lastName}
@@ -90,7 +89,7 @@ class UserShowContainer extends Component {
           <div>
             <ItineraryFormContainer addNewItinerary={this.addNewItinerary} />
           </div>
-          <div>{itineraries}</div>
+          <div className="user-itineraries">{itineraries}</div>
         </div>
 
       </div>
