@@ -6,6 +6,7 @@ class Api::V1::ExcursionsController < Api::V1::ApiController
     term = nil
     excursion_parser = ExcursionParser.new
     excursion_parser.search(term, location)
-    render json: { data: excursion_parser.data }
+    itineraries = current_user.itineraries
+    render json: { data: excursion_parser.data, itineraries: itineraries }
   end
 end

@@ -10,11 +10,12 @@ Rails.application.routes.draw do
     resources :cities, only: [:index, :show]
   end
 
-  resources :excursions, only: [:index, :show]
 
-  resources :cities, only: [:index, :show] do
-    resources :excursions, only: [:index, :show, :new, :create]
-  end
+
+  resources :cities, only: [:index, :show]
+  #do
+  resources :excursions, only: :show
+
 
   namespace :api do
     namespace :v1 do

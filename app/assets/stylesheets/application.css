@@ -14,19 +14,56 @@
  *= require_tree .
  *= require_self
 
-
  */
 
+ /* display: grid;
+ grid-template-columns: auto auto auto auto;
+ grid-template-rows: 400px 400px ; */
+
+
+
+
+.grid-container{
+  position: relative;
+  margin-left: 50px;
+  display: grid;
+  height:400px;
+  width: 400px;
+}
+
+
+.button-red{
+  background-color: red;
+  font-family: "Montserrat", sans-serif;
+}
+.row {
+  width: 85%;
+}
 .profile-img {
   text-align: center;
+  padding: 10px;
 }
 .profile-img img {
   width: 70%;
   height: 100%;
 }
 
+.show-container {
+  position: relative;
+}
+.itinerary-form {
+  text-align: center;
+  left: auto;
+  padding: 10px;
+  margin: auto;
+  max-width: 600px;
+}
+.user-itineraries {
+  right: auto;
+}
 .heading {
   text-align: center;
+  font-family: "Montserrat", sans-serif;
 }
 .index-tile-font {
   color: white;

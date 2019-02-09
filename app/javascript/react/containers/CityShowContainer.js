@@ -1,13 +1,16 @@
 import React, { Component } from "react";
 import { Link } from "react-router";
-import ExcursionFormContainer from "./ExcursionFormContainer";
+import ExcursionTile from "./ExcursionTile";
+import ExcursionShowContainer from "./ExcursionShowContainer";
 
 class CityShowContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      name: "",
       businesses: [],
-      events: []
+      events: [],
+      itineraries: []
     };
     this.addEvent = this.addEvent.bind(this);
   }
@@ -26,7 +29,8 @@ class CityShowContainer extends Component {
       .then(response => response.json())
       .then(businesses => {
         this.setState({
-          businesses: businesses["data"]
+          businesses: businesses["data"],
+          itineraries: businesses["itineraries"]
         });
       })
       .catch(error => console.log(`Error in fetch: ${error.message}`));
@@ -60,21 +64,41 @@ class CityShowContainer extends Component {
   }
 
   render() {
+    console.log(this.state.itineraries)
+    let userItineraries = this.state.itineraries.map((itinerary, index) => {
+      return(
+        <option key={index} value={itinerary.id}>{itinerary.name}</option>
+      )
+    })
     let businesses = this.state.businesses.map((business, index) => {
       return (
-        <div>
-          <ExcursionFormContainer
-            key={business.business_id}
+        <div key={business.business_id}>
+          <ExcursionTile
             id={index + 1}
+            itineraries={userItineraries}
             business={business}
             addEvent={this.addEvent}
           />
+
         </div>
       );
     });
 
-    return <div>{businesses}</div>;
+    return (
+    <div className="large-2 columns left grid-container rows">
+    {businesses}</div>
+  )
+
   }
 }
 
 export default CityShowContainer;
+
+
+
+
+// <ExcursionShowContainer
+//   id={index + 1}
+//   itineraries={userItineraries}
+//   business={business}
+// />

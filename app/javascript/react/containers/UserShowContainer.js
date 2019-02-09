@@ -75,17 +75,24 @@ class UserShowContainer extends Component {
       return <ItineraryTile key={itinerary.id} itinerary={itinerary} />;
     });
     return (
-      <div>
-        <h2 className="user-show-text">
-          {this.state.firstName} {this.state.lastName}
-        </h2>
-        <div class="profile-img">
-          <img src={this.state.image} />
+      <div className="show-container row">
+
+        <div className="column small-6">
+          <h2 className="user-show-text">
+            {this.state.firstName} {this.state.lastName}
+          </h2>
+          <div class="profile-img">
+            <img src={this.state.image} />
+          </div>
         </div>
-        <div className="user-form">
-          <ItineraryFormContainer addNewItinerary={this.addNewItinerary} />
+
+        <div className="column small-6">
+          <div>
+            <ItineraryFormContainer addNewItinerary={this.addNewItinerary} />
+          </div>
+          <div>{itineraries}</div>
         </div>
-        <div>{itineraries}</div>
+
       </div>
     );
   }

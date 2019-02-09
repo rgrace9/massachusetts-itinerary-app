@@ -35,7 +35,7 @@ class ItineraryFormContainer extends Component {
   render() {
     return (
       <div>
-        <h2>Create a New Itinerary</h2>
+        <h2 className="heading">Create a New Itinerary</h2>
         <form onSubmit={this.handleSubmit}>
           <ItineraryNameField
             content={this.state.name}
@@ -43,7 +43,7 @@ class ItineraryFormContainer extends Component {
             name="name"
             handleChange={this.handleChange}
           />
-          <input type="submit" value="Submit" />
+          <input type="submit" value="Submit" className="button button-red"/>
         </form>
       </div>
     );
