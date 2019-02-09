@@ -20,8 +20,19 @@
  grid-template-columns: auto auto auto auto;
  grid-template-rows: 400px 400px ; */
 
+.panel{
+  background-color: #BFC9D1;
+}
+.google-map{
+  position:fixed;
+  left: 600px;
+  top: 150px;
 
-
+}
+.user-itineraries{
+  border: 2px solid black;
+  border-radius: 10px;
+}
 
 .grid-container{
   position: relative;
@@ -33,8 +44,22 @@
 
 
 .button-red{
-  background-color: red;
+  background-color: white;
+  color: black;
   font-family: "Montserrat", sans-serif;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  border: 1px solid black;
+}
+
+.button-red:hover {
+  background-color: #D0C2C2;
 }
 .row {
   width: 85%;
@@ -50,6 +75,7 @@
 
 .show-container {
   position: relative;
+  padding: 100px;
 }
 .itinerary-form {
   text-align: center;
@@ -88,39 +114,12 @@ a {
   height: 400px;
   width: 100%;
 }
-
-h1 {
-  color: black;
-  font-family: "Montserrat", sans-serif;
+.region-index-page{
+  position: relative;
+  padding: 50px;
 }
 
-body {
-  background: #c1e0ed;
-}
 
-.top-bar-section li:not(.has-form) a:not(.button) {
-  font-family: "Montserrat", sans-serif;
-  background-color: #213234;
-  font-size: 20px;
-}
-
-.top-bar {
-  padding: 10px;
-  background: #213234;
-  /* background: #c1e0ed; */
-  height: 4rem;
-}
-.top-bar.title-area.a {
-  padding: 10px;
-  background: #213234;
-  /* background: #c1e0ed; */
-  height: 4rem;
-}
-
-.top-bar.section {
-  background: #213234;
-  height: 4rem;
-}
 .region-image {
   flex-shrink: 0;
   min-width: 100%;
@@ -128,17 +127,54 @@ body {
   align-items: center;
 }
 
+h1 {
+  color: black;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background: #F8F8F8;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button) {
+  font-family: "Montserrat", sans-serif;
+  background-color: #D0C2C2;
+  font-size: 20px;
+}
+
+
+.top-bar {
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  background: #D0C2C2;
+  height: 4rem;
+
+}
+.top-bar.title-area.a {
+  padding: 10px;
+  background: #D0C2C2;
+  height: 4rem;
+}
+
+.top-bar.section {
+  background: #D0C2C2;
+  height: 4rem;
+}
+
+
 #region-index-heading {
   text-align: center;
   font-family: "Montserrat", sans-serif;
 }
 
 .excursion-tile-wrapper {
-  padding: 0px;
+  padding-top: 100px;
+  position: relative;
 }
 .excursion-tile {
-  padding: 10px;
-  margin: 10px;
+  padding: 20px;
+
 }
 
 .region-name {

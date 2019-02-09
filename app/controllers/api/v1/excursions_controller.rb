@@ -10,3 +10,7 @@ class Api::V1::ExcursionsController < Api::V1::ApiController
     render json: { data: excursion_parser.data, itineraries: itineraries }
   end
 end
+
+
+# render json: { data: excursion_parser.data}
+# Make a conditional - whether or not a user is signed in...

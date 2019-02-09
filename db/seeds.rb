@@ -7,13 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 greater_boston = Region.create(name: "Greater Boston Area", image: "https://s3.amazonaws.com/massachusetts-itinerary-app-development/boston-01.jpg")
 
-western = Region.create(name: "Western", image: "https://s3.amazonaws.com/massachusetts-itinerary-app-development/berkshires.jpeg")
+western = Region.create(name: "Western", image: "https://s3.amazonaws.com/massachusetts-itinerary-app-development/berskhires_road.jpg")
 
 central = Region.create(name: "Central", image: "https://s3.amazonaws.com/massachusetts-itinerary-app-development/1200px-Bankroft_Tower_central_ma.jpg")
 
-northeast = Region.create(name: "Northeast", image: "https://s3.amazonaws.com/massachusetts-itinerary-app-development/northeast_ma.jpg")
+northeast = Region.create(name: "Northeast", image: "https://s3.amazonaws.com/massachusetts-itinerary-app-development/salem.jpg")
 
-cape = Region.create(name: "Cape & Islands", image: "https://s3.amazonaws.com/massachusetts-itinerary-app-development/marthas-vineyard.jpg")
+cape = Region.create(name: "Cape & Islands", image: "https://s3.amazonaws.com/massachusetts-itinerary-app-development/marthasvineyardlighthouse.jpg")
 
 southeast = Region.create(name: "Southeast", image: "https://s3.amazonaws.com/massachusetts-itinerary-app-development/massachusetts-plymouth.jpg")
 
@@ -60,12 +60,15 @@ end
 
 
 user_list = [
-  [ "rob@test.com", "password", "password", "Rob", "Smith" ],
-  [ "bill@test.com", "password", "password", "Bill", "Jackson" ],
-  [ "jen@test.com", "password", "password", "Jenny", "Adams" ],
-  [ "emily@test.com", "password", "password", "Emily", "Roberts" ]
+  [ "rob@test.com", "password", "password", "https://s3.amazonaws.com/massachusetts-itinerary-app-development/prof-pic-man-2.png", "Rob", "Smith" ],
+
+  [ "bill@test.com", "password", "password", "https://s3.amazonaws.com/massachusetts-itinerary-app-development/prof-pic-man.png", "Bill", "Jackson" ],
+
+  [ "jen@test.com", "password", "password", "https://s3.amazonaws.com/massachusetts-itinerary-app-development/prof-pic-woman.jpeg", "Jenny", "Adams" ],
+
+  [ "emily@test.com", "password", "password", "https://s3.amazonaws.com/massachusetts-itinerary-app-development/no-photo.jpg", "Emily", "Roberts" ]
 ]
 
-user_list.each do |email, password, password_confirmation, first_name, last_name|
-  User.create( email: email, password: password, password_confirmation: password_confirmation, first_name: first_name, last_name: last_name )
+user_list.each do |email, password, password_confirmation, profile_photo, first_name, last_name|
+  User.create( email: email, password: password, password_confirmation: password_confirmation, profile_photo: profile_photo, first_name: first_name, last_name: last_name )
 end

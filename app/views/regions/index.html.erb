@@ -1,10 +1,11 @@
+<div class="region-index-page">
 <h2 class="region-index-heading"> Regions </h2>
 <%@regions.each do |region|%>
 <%=link_to region_path(region) do%>
 <div class="region">
   <div class="region-index-tile small-4 columns">
     <div class="hvrbox">
-      <img src= "<%=region.image%>" class="hvrbox-layer_bottom region-image"/>
+      <img src= "<%=region.image%>" class="hvrbox-layer_bottom region-picture"/>
       <div class="hvrbox-layer_top">
         <div class="hvrbox-text">
           <h3 class="region-name">
@@ -17,3 +18,4 @@
 </div>
 <%end%>
 <%end%>
+</div>

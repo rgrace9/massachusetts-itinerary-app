@@ -37,9 +37,9 @@ class ExcursionTile extends Component {
     console.log(this.props.itineraries)
     return (
       <div>
-        <div className="excursion-tile-wrapper panel">
-          <div className="excursion-tile">
-              <Link to={{ pathname: `/excursions/${this.props.id}`, state: { business: this.props.business}, component: {ExcursionShowContainer} }}>
+        <div className="panel">
+          <div>
+              <Link to={{ pathname: `/excursions/${this.props.id}`, state: { business: this.props.business}, itineraries: { itineraries: this.props.itineraries }, component: {ExcursionShowContainer} }}>
                 <h2 className="heading">{this.props.business.name}</h2>
               </Link>
               <img
