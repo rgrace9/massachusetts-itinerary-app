@@ -16,34 +16,45 @@
 
  */
 
- /* display: grid;
+/* display: grid;
  grid-template-columns: auto auto auto auto;
  grid-template-rows: 400px 400px ; */
 
-.panel{
-  background-color: #BFC9D1;
+h1,
+h2,
+h3,
+h4,
+a,
+p {
+  font-family: "Montserrat", sans-serif;
 }
-.google-map{
-  position:fixed;
+.excursion-show {
+  padding-top: 250px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+.panel {
+  background-color: #bfc9d1;
+}
+.google-map {
+  position: fixed;
   left: 600px;
   top: 150px;
-
 }
-.user-itineraries{
+.user-itineraries {
   border: 2px solid black;
   border-radius: 10px;
 }
 
-.grid-container{
+.grid-container {
   position: relative;
   margin-left: 50px;
   display: grid;
-  height:400px;
+  height: 400px;
   width: 400px;
 }
 
-
-.button-red{
+.button-red {
   background-color: white;
   color: black;
   font-family: "Montserrat", sans-serif;
@@ -59,7 +70,7 @@
 }
 
 .button-red:hover {
-  background-color: #D0C2C2;
+  background-color: #d0c2c2;
 }
 .row {
   width: 85%;
@@ -114,11 +125,10 @@ a {
   height: 400px;
   width: 100%;
 }
-.region-index-page{
+.region-index-page {
   position: relative;
   padding: 50px;
 }
-
 
 .region-image {
   flex-shrink: 0;
@@ -133,35 +143,32 @@ h1 {
 }
 
 body {
-  background: #F8F8F8;
+  background: #f8f8f8;
 }
 
 .top-bar-section li:not(.has-form) a:not(.button) {
   font-family: "Montserrat", sans-serif;
-  background-color: #D0C2C2;
+  background-color: #d0c2c2;
   font-size: 20px;
 }
-
 
 .top-bar {
   position: fixed;
   z-index: 10;
   width: 100%;
-  background: #D0C2C2;
+  background: #d0c2c2;
   height: 4rem;
-
 }
 .top-bar.title-area.a {
   padding: 10px;
-  background: #D0C2C2;
+  background: #d0c2c2;
   height: 4rem;
 }
 
 .top-bar.section {
-  background: #D0C2C2;
+  background: #d0c2c2;
   height: 4rem;
 }
-
 
 #region-index-heading {
   text-align: center;
@@ -174,7 +181,6 @@ body {
 }
 .excursion-tile {
   padding: 20px;
-
 }
 
 .region-name {

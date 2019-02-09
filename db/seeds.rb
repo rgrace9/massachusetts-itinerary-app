@@ -58,7 +58,6 @@ city_list.each do |name, region|
   City.create(name: name, region: region)
 end
 
-
 user_list = [
   [ "rob@test.com", "password", "password", "https://s3.amazonaws.com/massachusetts-itinerary-app-development/prof-pic-man-2.png", "Rob", "Smith" ],
 
@@ -70,5 +69,5 @@ user_list = [
 ]
 
 user_list.each do |email, password, password_confirmation, profile_photo, first_name, last_name|
-  User.create( email: email, password: password, password_confirmation: password_confirmation, profile_photo: profile_photo, first_name: first_name, last_name: last_name )
+  User.create( email: email, password: password, password_confirmation: password_confirmation, profile_photo: { url: profile_photo}, first_name: first_name, last_name: last_name )
 end
