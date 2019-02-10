@@ -20,6 +20,19 @@
  grid-template-columns: auto auto auto auto;
  grid-template-rows: 400px 400px ; */
 
+ .button-red:visited {
+    background-color: #bfc9d1;
+ }
+
+.event-form{
+  text-align: center;
+  padding-top: 100px;
+  padding-left: 200px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+
 h1,
 h2,
 h3,
@@ -154,6 +167,7 @@ body {
 
 .top-bar {
   position: fixed;
+  padding-top: 10px;
   z-index: 10;
   width: 100%;
   background: #d0c2c2;

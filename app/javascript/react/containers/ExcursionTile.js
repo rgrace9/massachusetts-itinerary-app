@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router";
-import ExcursionShowContainer from "./ExcursionShowContainer"
+import ExcursionShowContainer from "./ExcursionShowContainer";
 
 
 class ExcursionTile extends Component {
@@ -34,22 +34,23 @@ class ExcursionTile extends Component {
     this.setState({ [event.target.name]: event.target.value });
   }
   render() {
-    console.log(this.props.itineraries)
     return (
       <div>
         <div className="panel">
           <div>
               <Link to={{ pathname: `/excursions/${this.props.id}`, state: { business: this.props.business}, itineraries: { itineraries: this.props.itineraries }, component: {ExcursionShowContainer} }}>
                 <h2 className="heading">{this.props.business.name}</h2>
-              </Link>
+
               <img
                 className="excursion-image"
                 src={this.props.business.image}
                 width="400px"
                 height="400px"
               />
+              </Link>
           </div>
         </div>
+
       </div>
     );
   }
