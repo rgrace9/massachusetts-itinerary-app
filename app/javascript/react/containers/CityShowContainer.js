@@ -12,7 +12,6 @@ class CityShowContainer extends Component {
       events: [],
       itineraries: []
     };
-    this.addEvent = this.addEvent.bind(this);
   }
 
   componentDidMount() {
@@ -36,35 +35,9 @@ class CityShowContainer extends Component {
       .catch(error => console.log(`Error in fetch: ${error.message}`));
   }
 
-  addEvent(formPayload) {
-    fetch("/api/v1/events", {
-      credentials: "same-origin",
-      method: "POST",
-      body: JSON.stringify(formPayload),
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-      }
-    })
-      .then(response => {
-        if (response.ok) {
-          return response;
-        } else {
-          let errorMessage = `${response.status} (${response.statusText})`,
-            error = new Error(errorMessage);
-          throw error;
-        }
-      })
-      .then(response => response.json())
-      .then(newEvent => {
-        let currentEvents = this.state.events;
-        this.setState({ events: currentEvents.concat(newEvent) });
-      })
-      .catch(error => console.log(`Error in fetch: ${error.message}`));
-  }
+
 
   render() {
-    console.log(this.state.itineraries)
     let userItineraries = this.state.itineraries.map((itinerary, index) => {
       return(
         <option key={index} value={itinerary.id}>{itinerary.name}</option>
@@ -77,9 +50,7 @@ class CityShowContainer extends Component {
             id={index + 1}
             itineraries={userItineraries}
             business={business}
-            addEvent={this.addEvent}
           />
-
         </div>
       );
     });
@@ -90,7 +61,7 @@ class CityShowContainer extends Component {
         <div className="excursion-tile-wrapper">
         {businesses}</div>
       </div>
-      <div className="google-map column small-6 right"><Map /></div>
+      <div className="google-map column small-6 right"><Map excursions={this.state.businesses}/></div>
 
     </div>
   )
