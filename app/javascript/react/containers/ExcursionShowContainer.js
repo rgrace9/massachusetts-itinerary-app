@@ -5,7 +5,7 @@ class ExcursionShowContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      events:[]
     }
       this.addEvent = this.addEvent.bind(this);
   }
@@ -32,6 +32,7 @@ class ExcursionShowContainer extends Component {
       .then(response => response.json())
       .then(newEvent => {
         let currentEvents = this.state.events;
+        
         this.setState({ events: currentEvents.concat(newEvent) });
       })
       .catch(error => console.log(`Error in fetch: ${error.message}`));
@@ -43,10 +44,10 @@ class ExcursionShowContainer extends Component {
         <div className="row">
           <div className="large centered columns">
             <div className="excursion-show">
-              <h1>{this.props.location.state.business.name}</h1>
-              <h3>{this.props.location.state.business.display_address}</h3>
-              <a href={this.props.location.state.business.url} target="_blank">
-                Learn More
+              <h1>{this.props.location.state.props.business.name}</h1>
+              <h3>{this.props.location.state.props.business.display_address}</h3>
+              <a href={this.props.location.state.props.business.url} target="_blank">
+                Click Here to Learn More
               </a>
             </div>
           </div>
@@ -54,7 +55,7 @@ class ExcursionShowContainer extends Component {
 
         <div className="row">
           <div className="large centered columns event-form">
-            <EventFormContainer addEvent={this.addEvent}/>
+            <EventFormContainer business={this.props.location.state.props.business} itineraries={this.props.location.state.props.itineraries} addEvent={this.addEvent}/>
           </div>
         </div>
 

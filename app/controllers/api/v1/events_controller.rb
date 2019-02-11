@@ -13,6 +13,11 @@ class Api::V1::EventsController < Api::V1::ApiController
     end
   end
 
+  def destroy
+    event = Event.find(params[:event_id])
+    event.delete
+  end
+
   private
 
   def sanitize_params
@@ -28,13 +33,10 @@ class Api::V1::EventsController < Api::V1::ApiController
     display_address: params[:business_info][:display_address],
     duration: params[:duration],
     day: params[:day],
-    itinerary_id: 1
+    itinerary: params[:itinerary]
     }
 
   end
-
-
-
 
 end
 

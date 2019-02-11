@@ -5,8 +5,6 @@ import DateField from "../components/DateField";
 import DayField from "../components/DayField";
 import DurationField from "../components/DurationField";
 
-
-
 class EventFormContainer extends Component {
   constructor(props) {
     super(props);
@@ -38,16 +36,22 @@ class EventFormContainer extends Component {
     this.setState({ [event.target.name]: event.target.value });
   }
   render() {
-    console.log(this.props.itineraries)
     return (
       <div className="small-6 columns panel">
+        <form>
+              <ItineraryField
+                label="Select an Itinerary"
+                name="itinerary"
+                content={this.state.itinerary}
+                itineraries={this.props.itineraries}
+                handleChange={this.handleChange}
+              />
               <DayField
                 content={this.state.date}
                 label="Day"
                 name="day"
                 handleChange={this.handleChange}
               />
-              <div className="row small-2-columns">
                 <DurationField
                   content={this.state.time}
                   label="Duration"
@@ -55,7 +59,7 @@ class EventFormContainer extends Component {
                   handleChange={this.handleChange}
                 />
                 <input type="submit" value="Add to Itinerary" className="button button-red"/>
-              </div>
+              </form>
       </div>
     );
   }

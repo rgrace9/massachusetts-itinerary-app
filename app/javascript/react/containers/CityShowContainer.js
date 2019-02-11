@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router";
 import ExcursionTile from "./ExcursionTile";
 import ExcursionShowContainer from "./ExcursionShowContainer";
+import SearchContainer from "./SearchContainer";
 import Map from "../components/Map"
 class CityShowContainer extends Component {
   constructor(props) {
@@ -12,10 +13,37 @@ class CityShowContainer extends Component {
       events: [],
       itineraries: []
     };
+    this.yelpSearch = this.yelpSearch.bind(this);
+  }
+
+  yelpSearch(payload){
+    fetch(`/api/v1/cities/${this.props.params.id}/excursions`, {
+      credentials: "same-origin",
+      method: "POST",
+      body: JSON.stringify(payload),
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+          error = new Error(errorMessage);
+        throw error;
+      }
+    })
+    .then(response => response.json())
+    .then(yelpExcursions => {
+      this.setState({ businesses: yelpExcursions.data });
+    })
+    .catch(error => console.log(`Error in fetch: ${error.message}`));
   }
 
   componentDidMount() {
-    fetch(`/api/v1/cities/${this.props.params.id}/excursions`)
+    fetch(`/api/v1/cities/${this.props.params.id}/businesses`)
       .then(response => {
         if (response.ok) {
           return response;
@@ -38,20 +66,12 @@ class CityShowContainer extends Component {
 
 
   render() {
-    let userItineraries = this.state.itineraries.map((itinerary, index) => {
-      return(
-        <option key={index} value={itinerary.id}>{itinerary.name}</option>
-      )
-    })
     let businesses = this.state.businesses.map((business, index) => {
       return (
-        <div key={business.business_id}>
-          <ExcursionTile
+          <ExcursionTile key={business.business_id}
             id={index + 1}
-            itineraries={userItineraries}
             business={business}
           />
-        </div>
       );
     });
 
@@ -62,7 +82,9 @@ class CityShowContainer extends Component {
         {businesses}</div>
       </div>
       <div className="google-map column small-6 right"><Map excursions={this.state.businesses}/></div>
-
+      <div className="search-form column small-6 right" >
+      <SearchContainer yelpSearch={this.yelpSearch}/>
+      </div>
     </div>
   )
 

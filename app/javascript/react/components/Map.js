@@ -9,12 +9,12 @@ import {
 
 
 const GoogleMapMassachusetts = withGoogleMap(props => {
-  // debugger
+  console.log(props)
   return(
   <GoogleMap
     ref={props.onMapLoad}
-    defaultCenter={{ lat: 42.361145, lng: -71.057083 }}
     defaultZoom={13}
+    defaultCenter={{ lat: 42.361145, lng: -71.057083 }}
       >
   {props.children}
   </GoogleMap>
@@ -35,7 +35,6 @@ class Map extends Component {
         <GoogleMapMassachusetts
           containerElement={<div style={{ height: `500px`, width: "500px" }} />}
           mapElement={<div style={{ height: `100%` }} />}
-
         >
         {this.props.excursions.map(excursion => {
           return(
@@ -52,3 +51,14 @@ class Map extends Component {
   }
 }
 export default Map;
+
+
+
+
+// <GoogleMap
+//   ref={props.onMapLoad}
+//   defaultCenter={{ lat: 42.361145, lng: -71.057083 }}
+//   defaultZoom={13}
+//     >
+// {props.children}
+// </GoogleMap>

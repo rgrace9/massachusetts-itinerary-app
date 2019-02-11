@@ -12,40 +12,18 @@ class ExcursionTile extends Component {
       itinerary: ""
     };
 
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(event) {
-    this.setState({ [event.target.name]: event.target.value });
-  }
-  handleSubmit(event) {
-    event.preventDefault();
-    let formPayload = {
-      business_info: this.props.business,
-      duration: this.state.duration,
-      day: this.state.day,
-      itinerary: this.state.itinerary
-    };
-    this.props.addEvent(formPayload);
-  }
-
-  handleChange(event) {
-    this.setState({ [event.target.name]: event.target.value });
   }
   render() {
+
     return (
       <div>
         <div className="panel">
           <div>
-              <Link to={{ pathname: `/excursions/${this.props.id}`, state: { business: this.props.business}, itineraries: { itineraries: this.props.itineraries }, component: {ExcursionShowContainer} }}>
+              <Link to={`/excursions/${this.props.id}`}>
                 <h2 className="heading">{this.props.business.name}</h2>
-
               <img
                 className="excursion-image"
                 src={this.props.business.image}
-                width="400px"
-                height="400px"
               />
               </Link>
           </div>
