@@ -1,6 +1,6 @@
 import React from "react";
 
-const ItineraryField = props => {
+const LocationField = props => {
   return (
     <label>
       {props.label}
@@ -18,4 +18,4 @@ const ItineraryField = props => {
 
 
 
-export default ItineraryField;
+export default LocationField;

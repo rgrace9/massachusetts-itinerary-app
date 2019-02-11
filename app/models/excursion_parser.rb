@@ -7,7 +7,7 @@ SEARCH_PATH = "/v3/businesses/search"
 BUSINESS_PATH = "/v3/businesses/"
 
 DEFAULT_BUSINESS_ID = "yelp-boston"
-DEFAULT_TERM = "parks"
+DEFAULT_TERM = "diners"
 DEFAULT_LOCATION = "Boston, MA"
 SEARCH_LIMIT = 10
 
@@ -22,7 +22,7 @@ class ExcursionParser
     url = "#{API_HOST}#{SEARCH_PATH}"
     usable_location = location || DEFAULT_LOCATION
     params = {
-      term: DEFAULT_TERM,
+      term: term,
       location: usable_location,
       limit: SEARCH_LIMIT
     }
@@ -46,6 +46,13 @@ class ExcursionParser
     end
 
   end
+
+  def business(business_id)
+    url = "#{API_HOST}#{BUSINESS_PATH}#{business_id}"
+    response = HTTP.auth("Bearer #{ENV["YELP_API_KEY"]}").get(url)
+    response.parse
+  end
+
 
 end
 

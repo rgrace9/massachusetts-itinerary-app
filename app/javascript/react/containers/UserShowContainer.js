@@ -61,7 +61,6 @@ class UserShowContainer extends Component {
       .then(response => response.json())
 
       .then(newItinerary => {
-        console.log(newItinerary);
         let currentItinerary = this.state.itineraries;
         this.setState({
           itineraries: currentItinerary.concat(newItinerary)
@@ -80,7 +79,7 @@ class UserShowContainer extends Component {
           <h2 className="user-show-text">
             {this.state.firstName} {this.state.lastName}
           </h2>
-          <div class="profile-img">
+          <div className="profile-img">
             <img src={this.state.image} />
           </div>
         </div>

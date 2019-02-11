@@ -19,8 +19,27 @@
 /* display: grid;
  grid-template-columns: auto auto auto auto;
  grid-template-rows: 400px 400px ; */
+.search-form{
+  text-align: center;
+  left: auto;
+  padding-top: 80px;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  max-width: 500px;
+}
 
+.google-map {
+  position: fixed;
+  margin-top: 100px;
+  left: 600px;
+  top: 150px;
+}
  .button-red:visited {
+    background-color: #bfc9d1;
+ }
+
+ .button-red.a {
     background-color: #bfc9d1;
  }
 
@@ -49,11 +68,7 @@ p {
 .panel {
   background-color: #bfc9d1;
 }
-.google-map {
-  position: fixed;
-  left: 600px;
-  top: 150px;
-}
+
 .user-itineraries {
   border: 2px solid black;
   border-radius: 10px;

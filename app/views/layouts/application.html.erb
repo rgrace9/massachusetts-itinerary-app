@@ -3,7 +3,7 @@
 <head>
   <title>MA-Itinerary</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://maps.googleapis.com/maps/api/js?key=<%ENV['MAPS_API_KEY']%>"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=<%=ENV["MAPS_API_KEY"]%>"></script>
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Krub" rel="stylesheet">
   <%= stylesheet_link_tag 'application', media: 'all' %>
@@ -12,6 +12,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
 
   <nav class="top-bar">
     <ul class="title-area">

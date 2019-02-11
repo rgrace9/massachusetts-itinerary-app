@@ -10,17 +10,24 @@ Rails.application.routes.draw do
     resources :cities, only: [:index, :show]
   end
 
+resources :excursions, only: :show
 
 
-  resources :cities, only: [:index, :show]
-  #do
-  resources :excursions, only: :show
+  resources :categories, only: :index
+
+  resources :cities, only: :index
+
+  resources :cities, only: :show do
+    resources :excursions, only: :show
+  end
+
 
 
   namespace :api do
     namespace :v1 do
       resources :cities, only: [:show] do
-        get "/excursions", to: "excursions#search"
+        post "/excursions", to: "excursions#search"
+        get "/businesses", to: "businesses#search"
       end
     end
   end
@@ -28,6 +35,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :events, only: [:index, :create, :new, :show]
+      resources :categories, only: :index
     end
   end
 
