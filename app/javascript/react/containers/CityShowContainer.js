@@ -11,7 +11,9 @@ class CityShowContainer extends Component {
       name: "",
       businesses: [],
       events: [],
-      itineraries: []
+      itineraries: [],
+      latitude: 42.361145,
+      longitude: -71.057083
     };
     this.yelpSearch = this.yelpSearch.bind(this);
   }
@@ -57,7 +59,9 @@ class CityShowContainer extends Component {
       .then(businesses => {
         this.setState({
           businesses: businesses["data"],
-          itineraries: businesses["itineraries"]
+          itineraries: businesses["itineraries"],
+          longitude: businesses["data"][0].longitude,
+          latitude: businesses["data"][0].latitude
         });
       })
       .catch(error => console.log(`Error in fetch: ${error.message}`));
@@ -66,6 +70,7 @@ class CityShowContainer extends Component {
 
 
   render() {
+
     let businesses = this.state.businesses.map((business, index) => {
       return (
           <ExcursionTile key={business.business_id}
@@ -81,7 +86,13 @@ class CityShowContainer extends Component {
         <div className="excursion-tile-wrapper">
         {businesses}</div>
       </div>
-      <div className="google-map column small-6 right"><Map excursions={this.state.businesses}/></div>
+      <div className="google-map column small-6 right">
+      <Map
+      excursions={this.state.businesses}
+      latitude={this.state.latitude}
+      longitude={this.state.longitude}
+      />
+      </div>
       <div className="search-form column small-6 right" >
       <SearchContainer yelpSearch={this.yelpSearch}/>
       </div>
