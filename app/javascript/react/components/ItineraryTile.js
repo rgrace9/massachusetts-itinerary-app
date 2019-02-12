@@ -4,7 +4,9 @@ import { Link } from "react-router";
 const ItineraryTile = props => {
   return (
     <div className="review-tile">
-      <p>Name: {props.itinerary.name}</p>
+      <Link to={`/users/${props.id}/itineraries/${props.itinerary.id}`}>
+        <p>Name: {props.itinerary.name}</p>
+      </Link>
     </div>
   );
 };

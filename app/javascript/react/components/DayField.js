@@ -6,7 +6,7 @@ const DayField = props => {
       {props.label}
       <input
         name={props.name}
-        type="text"
+        type="date"
         value={props.content}
         onChange={props.handleChange}
       />

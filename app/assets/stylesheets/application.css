@@ -19,7 +19,26 @@
 /* display: grid;
  grid-template-columns: auto auto auto auto;
  grid-template-rows: 400px 400px ; */
-.search-form{
+
+.yelp-link {
+  font-size: 5px;
+}
+a:hover {
+  color: black;
+}
+a:visited {
+  color: black;
+}
+
+.index-search-form {
+  padding: 50px;
+  margin: auto;
+  max-width: 600px;
+}
+.row {
+  width: 1500px;
+}
+.search-form {
   text-align: center;
   left: auto;
   padding-top: 80px;
@@ -35,22 +54,24 @@
   left: 600px;
   top: 150px;
 }
- .button-red:visited {
-    background-color: #bfc9d1;
- }
+.button-red:visited {
+  background-color: #bfc9d1;
+}
 
- .button-red.a {
-    background-color: #bfc9d1;
- }
+button:visited {
+  background-color: #bfc9d1;
+}
+.button-red.a {
+  background-color: #bfc9d1;
+}
 
-.event-form{
+.event-form {
   text-align: center;
   padding-top: 100px;
   padding-left: 200px;
   text-align: center;
   font-family: "Montserrat", sans-serif;
 }
-
 
 h1,
 h2,
@@ -65,6 +86,13 @@ p {
   text-align: center;
   font-family: "Montserrat", sans-serif;
 }
+
+.region-show {
+  padding-top: 175px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+
 .panel {
   background-color: #bfc9d1;
 }
@@ -100,9 +128,10 @@ p {
 .button-red:hover {
   background-color: #d0c2c2;
 }
-.row {
-  width: 85%;
+.button-red:focus {
+  background-color: #d0c2c2;
 }
+
 .profile-img {
   text-align: center;
   padding: 10px;
@@ -182,11 +211,10 @@ body {
 
 .top-bar {
   position: fixed;
-  padding-top: 10px;
   z-index: 10;
   width: 100%;
   background: #d0c2c2;
-  height: 4rem;
+  /* margin-bottom: 5rem; */
 }
 .top-bar.title-area.a {
   padding: 10px;
@@ -198,15 +226,19 @@ body {
   background: #d0c2c2;
   height: 4rem;
 }
-
+.scroll {
+  height: 1000px;
+  overflow: scroll;
+}
 #region-index-heading {
   text-align: center;
   font-family: "Montserrat", sans-serif;
 }
 
 .excursion-tile-wrapper {
-  padding-top: 100px;
   position: relative;
+  height: 400px;
+  width: 400px;
 }
 .excursion-tile {
   padding: 20px;

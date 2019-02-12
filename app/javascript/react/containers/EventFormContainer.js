@@ -32,9 +32,7 @@ class EventFormContainer extends Component {
     this.props.addEvent(formPayload);
   }
 
-  handleChange(event) {
-    this.setState({ [event.target.name]: event.target.value });
-  }
+
   render() {
     return (
       <div className="small-6 columns panel">

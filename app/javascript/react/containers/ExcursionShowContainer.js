@@ -32,7 +32,7 @@ class ExcursionShowContainer extends Component {
       .then(response => response.json())
       .then(newEvent => {
         let currentEvents = this.state.events;
-        
+
         this.setState({ events: currentEvents.concat(newEvent) });
       })
       .catch(error => console.log(`Error in fetch: ${error.message}`));

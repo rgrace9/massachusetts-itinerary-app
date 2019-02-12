@@ -63,7 +63,7 @@ class UserShowContainer extends Component {
       .then(newItinerary => {
         let currentItinerary = this.state.itineraries;
         this.setState({
-          itineraries: currentItinerary.concat(newItinerary)
+          itineraries: currentItinerary.concat(newItinerary.itinerary)
         });
       })
       .catch(error => console.log(`Error in fetch: ${error.message}`));
@@ -90,7 +90,6 @@ class UserShowContainer extends Component {
           </div>
           <div className="user-itineraries">{itineraries}</div>
         </div>
-
       </div>
     );
   }

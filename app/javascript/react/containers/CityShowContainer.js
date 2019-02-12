@@ -16,6 +16,36 @@ class CityShowContainer extends Component {
       longitude: -71.057083
     };
     this.yelpSearch = this.yelpSearch.bind(this);
+    this.addEvent = this.addEvent.bind(this);
+
+  }
+
+  addEvent(formPayload) {
+    fetch("/api/v1/events", {
+      credentials: "same-origin",
+      method: "POST",
+      body: JSON.stringify(formPayload),
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      }
+    })
+      .then(response => {
+        if (response.ok) {
+          return response;
+        } else {
+          let errorMessage = `${response.status} (${response.statusText})`,
+            error = new Error(errorMessage);
+          throw error;
+        }
+      })
+      .then(response => response.json())
+      .then(newEvent => {
+        let currentEvents = this.state.events;
+
+        this.setState({ events: currentEvents.concat(newEvent) });
+      })
+      .catch(error => console.log(`Error in fetch: ${error.message}`));
   }
 
   yelpSearch(payload){
@@ -76,25 +106,34 @@ class CityShowContainer extends Component {
           <ExcursionTile key={business.business_id}
             id={index + 1}
             business={business}
+            itineraries={this.state.itineraries}
+            addEvent = {this.addEvent}
           />
       );
     });
 
     return (
-    <div>
-      <div className="column small-6 left grid-container rows">
-        <div className="excursion-tile-wrapper">
+    <div className="row" style={{marginTop: "50px"}}>
+      <div className="column small-6 left scroll">
+        <div>
         {businesses}</div>
       </div>
-      <div className="google-map column small-6 right">
-      <Map
-      excursions={this.state.businesses}
-      latitude={this.state.latitude}
-      longitude={this.state.longitude}
-      />
+      <div className="column small-6 ">
+
+      <div>
+        <SearchContainer yelpSearch={this.yelpSearch}/>
       </div>
-      <div className="search-form column small-6 right" >
-      <SearchContainer yelpSearch={this.yelpSearch}/>
+
+      <div>
+        <Map
+        excursions={this.state.businesses}
+        latitude={this.state.latitude}
+        longitude={this.state.longitude}
+        />
+      </div>
+
+
+
       </div>
     </div>
   )
