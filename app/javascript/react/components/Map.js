@@ -14,7 +14,7 @@ const GoogleMapMassachusetts = withGoogleMap(props => {
   <GoogleMap
     ref={props.onMapLoad}
     defaultZoom={13}
-    defaultCenter={{ lat: 42.361145, lng: -71.057083 }}
+    center={props.center}
       >
   {props.children}
   </GoogleMap>
@@ -29,12 +29,14 @@ class Map extends Component {
 
 
   render() {
-    console.log(this.props.excursions)
+    let latitude = this.props.latitude
+    let longitude = this.props.longitude
     return (
       <div>
         <GoogleMapMassachusetts
           containerElement={<div style={{ height: `500px`, width: "500px" }} />}
           mapElement={<div style={{ height: `100%` }} />}
+          center={{ lat: latitude, lng: longitude }}
         >
         {this.props.excursions.map(excursion => {
           return(
