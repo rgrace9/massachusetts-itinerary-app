@@ -23,7 +23,7 @@ class CreateBusinesses < ActiveRecord::Migration[5.2]
     remove_column :events, :city, :string
     remove_column :events, :display_address, :string
 
-    add_column :events, :business_id, :bigint, null: false
+    add_column :events, :business_id, :bigint
     add_index :events, :business_id
   end
 end
