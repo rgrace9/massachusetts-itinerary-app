@@ -1,8 +1,20 @@
 class Api::V1::ItinerariesController < ApplicationController
   protect_from_forgery unless: -> { request.format.json? }
 
+
   def show
-    render json: Itinerary.find(params[:id])
+    itinerary = Itinerary.find(params[:id])
+    events = itinerary.events
+    events = events.map do |event|
+      EventSerializer.new(event)
+    end
+    render json: {itinerary:{
+      id:itinerary.id,
+      user_id: itinerary.user_id,
+      name: itinerary.name,
+      events: events
+      }
+    }
   end
 
   def index

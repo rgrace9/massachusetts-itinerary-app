@@ -13,7 +13,7 @@ export const App = props => {
       <Route path="/cities/:id" component={CityShowContainer} />
       <Route path="/users/:id" component={UserShowContainer} />
       <Route
-        path="/users/:id/itineraries/:id"
+        path="/users/:user_id/itineraries/:id"
         component={ItineraryShowContainer}
       />
       <Route path="/excursions/:id" component={ExcursionShowContainer} />
