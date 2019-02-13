@@ -1,21 +1,24 @@
 import React, { Component } from "react";
 import { Link } from "react-router";
-import ExcursionTile from "./ExcursionTile";
-import SearchContainer from "./SearchContainer";
-import Map from "../components/Map";
-class CityShowContainer extends Component {
+import CategoryField from "../components/CategoryField";
+import LocationField from "../components/LocationField";
+import ResultsContainer from "./ResultsContainer";
+
+class IndexSearchContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
       businesses: [],
-      events: [],
       itineraries: [],
-      latitude: 42.361145,
-      longitude: -71.057083
+      query: "",
+      location: ""
     };
-    this.yelpSearch = this.yelpSearch.bind(this);
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClear = this.handleClear.bind(this);
     this.addEvent = this.addEvent.bind(this);
+    this.yelpSearch = this.yelpSearch.bind(this);
   }
 
   addEvent(formPayload) {
@@ -47,7 +50,7 @@ class CityShowContainer extends Component {
   }
 
   yelpSearch(payload) {
-    fetch(`/api/v1/cities/${this.props.params.id}/excursions`, {
+    fetch(`/api/v1/queries`, {
       credentials: "same-origin",
       method: "POST",
       body: JSON.stringify(payload),
@@ -72,8 +75,29 @@ class CityShowContainer extends Component {
       .catch(error => console.log(`Error in fetch: ${error.message}`));
   }
 
+  handleChange(event) {
+    this.setState({ [event.target.name]: event.target.value });
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    let payload = {
+      query: this.state.query,
+      location: this.state.location
+    };
+    this.yelpSearch(payload);
+    this.handleClear();
+  }
+
+  handleClear() {
+    this.setState({
+      query: "",
+      location: ""
+    });
+  }
+
   componentDidMount() {
-    fetch(`/api/v1/cities/${this.props.params.id}/businesses`)
+    fetch(`/api/v1/cities/1/businesses`)
       .then(response => {
         if (response.ok) {
           return response;
@@ -86,55 +110,47 @@ class CityShowContainer extends Component {
       .then(response => response.json())
       .then(businesses => {
         this.setState({
-          businesses: businesses["data"],
-          itineraries: businesses["itineraries"],
-          longitude: businesses["data"][0].longitude,
-          latitude: businesses["data"][0].latitude
+          itineraries: businesses["itineraries"]
         });
       })
       .catch(error => console.log(`Error in fetch: ${error.message}`));
   }
 
   render() {
-    let businesses = this.state.businesses.map((business, index) => {
+    let results = this.state.businesses.map((business, index) => {
       return (
-        <ExcursionTile
+        <ResultsContainer
           key={business.business_id}
-          id={index + 1}
           business={business}
           itineraries={this.state.itineraries}
           addEvent={this.addEvent}
         />
       );
     });
-
     return (
-      <div className="row" style={{ marginTop: "50px" }}>
-        <div className="column small-6 left scroll">
-          <div>{businesses}</div>
-        </div>
-        <div className="column small-6 ">
-          <div>
-            <SearchContainer yelpSearch={this.yelpSearch} />
-          </div>
-
-          <div>
-            <Map
-              excursions={this.state.businesses}
-              latitude={this.state.latitude}
-              longitude={this.state.longitude}
-            />
-          </div>
-        </div>
+      <div>
+        <h2 className="region-index-heading">Search</h2>
+        <form onSubmit={this.handleSubmit}>
+          <input
+            placeholder="Enter Location"
+            type="text"
+            value={this.state.location}
+            onChange={this.handleChange}
+            name="location"
+          />
+          <input
+            placeholder="Enter Category"
+            type="text"
+            value={this.state.query}
+            onChange={this.handleChange}
+            name="query"
+          />
+          <input type="submit" className="button button-red" />
+        </form>
+        <div>{results}</div>
       </div>
     );
   }
 }
 
-export default CityShowContainer;
-
-// <ExcursionShowContainer
-//   id={index + 1}
-//   itineraries={userItineraries}
-//   business={business}
-// />
+export default IndexSearchContainer;

@@ -5,7 +5,7 @@ import DateField from "../components/DateField";
 import DurationField from "../components/DurationField";
 import DayField from "../components/DayField";
 
-class ExcursionTile extends Component {
+class ResultsContainer extends Component {
   constructor(props) {
     super(props);
     let itinerary = "";
@@ -17,7 +17,6 @@ class ExcursionTile extends Component {
       day: "",
       itinerary: itinerary
     };
-
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
@@ -35,7 +34,6 @@ class ExcursionTile extends Component {
     };
     this.props.addEvent(formPayload);
   }
-
   render() {
     return (
       <div className="columns">
@@ -81,4 +79,4 @@ class ExcursionTile extends Component {
   }
 }
 
-export default ExcursionTile;
+export default ResultsContainer;

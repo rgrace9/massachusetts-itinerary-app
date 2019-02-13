@@ -2,9 +2,12 @@ Rails.application.routes.draw do
   root 'regions#index'
 
   devise_for :users
-  resources :users, only: :show
 
-  resources :itineraries, only: [:index, :show, :new, :create]
+  resources :users, only: :show do
+    resources :itineraries, only: [:index, :show, :new, :create]
+  end
+
+  # resources :itineraries, only: [:index, :show, :new, :create]
 
   resources :regions, only: [:index, :show] do
     resources :cities, only: [:index, :show]
@@ -42,8 +45,21 @@ resources :excursions, only: :show
   namespace :api do
     namespace :v1 do
       resources :users, only: [:index, :show]
-      resources :itineraries, only: [:create, :index]
+      resources :itineraries, only: [:create, :index, :show]
     end
   end
+
+  namespace :api do
+    namespace :v1 do
+      resources :regions, only: [:index, :show]
+  end
+end
+
+namespace :api do
+  namespace :v1 do
+      post "/queries", to: "queries#search"
+  end
+end
+
 
 end

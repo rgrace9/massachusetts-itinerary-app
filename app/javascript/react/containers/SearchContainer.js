@@ -46,7 +46,7 @@ class SearchContainer extends Component{
             onChange={this.handleChange}
             name="query"
           />
-          <input type="submit"/>
+          <input type="submit" className="button button-red"/>
         </form>
       </div>
     )

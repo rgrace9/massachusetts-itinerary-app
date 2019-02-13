@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_11_154012) do
+ActiveRecord::Schema.define(version: 2019_02_12_204957) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "businesses", force: :cascade do |t|
+    t.string "yelp_business_id"
+    t.string "name"
+    t.string "image"
+    t.string "url"
+    t.string "price"
+    t.decimal "latitude"
+    t.decimal "longitude"
+    t.string "city"
+    t.string "display_address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string "name", null: false
@@ -42,20 +56,13 @@ ActiveRecord::Schema.define(version: 2019_02_11_154012) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.string "business_id"
-    t.string "name"
-    t.string "image"
-    t.string "url"
-    t.string "price"
-    t.decimal "latitude"
-    t.decimal "longitude"
-    t.string "city"
-    t.string "display_address"
     t.string "duration", null: false
     t.string "day", null: false
     t.bigint "itinerary_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "business_id", null: false
+    t.index ["business_id"], name: "index_events_on_business_id"
     t.index ["itinerary_id"], name: "index_events_on_itinerary_id"
   end
 
