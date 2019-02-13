@@ -39,7 +39,7 @@ class ItineraryShowContainer extends Component {
 
     return (
       <div>
-        <h1>{this.state.name}</h1>
+        <h1 className="region-show">{this.state.name}</h1>
         {events}
       </div>
     );

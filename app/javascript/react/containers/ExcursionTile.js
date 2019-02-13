@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router";
-import ExcursionShowContainer from "./ExcursionShowContainer";
 import ItineraryField from "../components/ItineraryField";
 import DateField from "../components/DateField";
 import DurationField from "../components/DurationField";

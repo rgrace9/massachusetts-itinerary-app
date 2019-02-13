@@ -1,7 +1,6 @@
 import React from "react";
 import CityShowContainer from "../containers/CityShowContainer";
 import UserShowContainer from "../containers/UserShowContainer";
-import ExcursionShowContainer from "../containers/ExcursionShowContainer";
 import IndexSearchContainer from "../containers/IndexSearchContainer";
 import ItineraryShowContainer from "../containers/ItineraryShowContainer";
 
@@ -16,7 +15,6 @@ export const App = props => {
         path="/users/:user_id/itineraries/:id"
         component={ItineraryShowContainer}
       />
-      <Route path="/excursions/:id" component={ExcursionShowContainer} />
     </Router>
   );
 };

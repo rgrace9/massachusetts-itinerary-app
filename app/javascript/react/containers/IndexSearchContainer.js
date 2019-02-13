@@ -9,6 +9,7 @@ class IndexSearchContainer extends Component {
     super(props);
     this.state = {
       businesses: [],
+      itineraries: [],
       query: "",
       location: ""
     };
@@ -16,7 +17,36 @@ class IndexSearchContainer extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClear = this.handleClear.bind(this);
+    this.addEvent = this.addEvent.bind(this);
     this.yelpSearch = this.yelpSearch.bind(this);
+  }
+
+  addEvent(formPayload) {
+    fetch("/api/v1/events", {
+      credentials: "same-origin",
+      method: "POST",
+      body: JSON.stringify(formPayload),
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      }
+    })
+      .then(response => {
+        if (response.ok) {
+          return response;
+        } else {
+          let errorMessage = `${response.status} (${response.statusText})`,
+            error = new Error(errorMessage);
+          throw error;
+        }
+      })
+      .then(response => response.json())
+      .then(newEvent => {
+        let currentEvents = this.state.events;
+
+        this.setState({ events: currentEvents.concat(newEvent) });
+      })
+      .catch(error => console.log(`Error in fetch: ${error.message}`));
   }
 
   yelpSearch(payload) {
@@ -66,7 +96,37 @@ class IndexSearchContainer extends Component {
     });
   }
 
+  componentDidMount() {
+    fetch(`/api/v1/cities/1/businesses`)
+      .then(response => {
+        if (response.ok) {
+          return response;
+        } else {
+          let errorMessage = `${response.status} (${response.statusText})`,
+            error = new Error(errorMessage);
+          throw error;
+        }
+      })
+      .then(response => response.json())
+      .then(businesses => {
+        this.setState({
+          itineraries: businesses["itineraries"]
+        });
+      })
+      .catch(error => console.log(`Error in fetch: ${error.message}`));
+  }
+
   render() {
+    let results = this.state.businesses.map((business, index) => {
+      return (
+        <ResultsContainer
+          key={business.business_id}
+          business={business}
+          itineraries={this.state.itineraries}
+          addEvent={this.addEvent}
+        />
+      );
+    });
     return (
       <div>
         <h2 className="region-index-heading">Search</h2>
@@ -87,7 +147,7 @@ class IndexSearchContainer extends Component {
           />
           <input type="submit" className="button button-red" />
         </form>
-        <ResultsContainer results={this.state.businesses} />
+        <div>{results}</div>
       </div>
     );
   }
