@@ -12,7 +12,7 @@ class ExcursionTile extends Component {
       itinerary = this.props.itineraries[0].id;
     }
     this.state = {
-      time: "",
+      time: "4:00 PM",
       day: "",
       itinerary: itinerary
     };
