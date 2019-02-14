@@ -6,7 +6,7 @@ const DurationField = props => {
       {props.label}
       <input
         name={props.name}
-        type="text"
+        type="time"
         value={props.content}
         onChange={props.handleChange}
       />

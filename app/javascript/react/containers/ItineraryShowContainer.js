@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router";
-import EventTile from "../components/EventTile";
+import EventShowContainer from "./EventShowContainer";
 
 class ItineraryShowContainer extends Component {
   constructor(props) {
@@ -34,13 +34,13 @@ class ItineraryShowContainer extends Component {
 
   render() {
     let events = this.state.events.map((event, index) => {
-      return <EventTile key={index} event={event} />;
+      return <EventShowContainer key={index} event={event} />;
     });
 
     return (
       <div>
         <h1 className="region-show">{this.state.name}</h1>
-        {events}
+        <div className="events-container">{events}</div>
       </div>
     );
   }

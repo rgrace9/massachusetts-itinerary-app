@@ -5,18 +5,15 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :first_name, "First Name" %><br />
-    <%= f.text_field :first_name %>
+    <%= f.text_field :first_name, :placeholder => "First Name"  %>
   </div>
 
   <div class="field">
-    <%= f.label :last_name, "Last Name" %><br />
-    <%= f.text_field :last_name %>
+    <%= f.text_field :last_name, :placeholder => "Last Name" %>
   </div>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", :placeholder => "Email" %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -24,8 +21,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, autocomplete: "new-password", :placeholder => "Password" %>
     <% if @minimum_password_length %>
       <br />
       <em><%= @minimum_password_length %> characters minimum</em>
@@ -34,7 +30,7 @@
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", :placeholder => "Password Confirmation" %>
   </div>
 
   <div class="field">
@@ -47,7 +43,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "Update", :class=>'button button-signup' %>
   </div>
 <% end %>
 

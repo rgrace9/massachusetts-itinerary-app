@@ -1,7 +1,6 @@
 import React from "react";
-import { Link } from "react-router";
 
-const EventTile = props => {
+const EventShowTile = props => {
   return (
     <div className="review-tile">
       <h2>{props.event.business.name}</h2>
@@ -15,4 +14,4 @@ const EventTile = props => {
   );
 };
 
-export default EventTile;
+export default EventShowTile;

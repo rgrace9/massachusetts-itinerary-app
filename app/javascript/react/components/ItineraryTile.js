@@ -9,7 +9,7 @@ const ItineraryTile = props => {
           props.itinerary.id
         }`}
       >
-        <p>Name: {props.itinerary.name}</p>
+        <h3 className="itinerary-heading">{props.itinerary.name}</h3>
       </Link>
     </div>
   );
