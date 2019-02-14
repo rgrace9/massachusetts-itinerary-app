@@ -49,7 +49,7 @@ class Api::V1::EventsController < Api::V1::ApiController
 
   def event_params
     {
-      duration: params[:duration],
+      time: params[:time].to_time,
       day: params[:day],
       itinerary_id: params[:itinerary]
     }

@@ -71,33 +71,3 @@ user_list = [
 user_list.each do |email, password, password_confirmation, profile_photo, first_name, last_name|
   User.create( email: email, password: password, password_confirmation: password_confirmation, profile_photo: { url: profile_photo}, first_name: first_name, last_name: last_name )
 end
-
-
-category_list = [
-  ["Arts & Entertainment", "arts"],
-  ["Aquariums", "aquariums"],
-  ["Bars", "bars"],
-  ["Bakeries", "bakeries"],
-  ["Beauty & Spa", "beautysvc"],
-  ["Beaches", "beaches"],
-  ["Breakfast & Brunch", "breakfast_brunch"],
-  ["Cafes", "cafes"],
-  ["Coffe & Tea", "coffe"],
-  ["Fitness", "fitness"],
-  ["Food", "food"],
-  ["Lakes", "lakes"],
-  ["Museums", "museums"],
-  ["Music Venues", "musicvenues"],
-  ["Observatories", "observatories"],
-  ["Parks", "parks"],
-  ["Planetarium", "planetarium"],
-  ["Restaurants", "restaurants"],
-  ["Shopping", "shopping"],
-  ["Wineries", "wineries"],
-
-
-]
-
-category_list.each do |name, yelp_name|
-  Category.create(name: name, yelp_name: yelp_name)
-end

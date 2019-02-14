@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router";
 import ItineraryField from "../components/ItineraryField";
-import DurationField from "../components/DurationField";
+import TimeField from "../components/TimeField";
 import DayField from "../components/DayField";
 
 class ResultsContainer extends Component {
@@ -12,7 +12,7 @@ class ResultsContainer extends Component {
       itinerary = this.props.itineraries[0].id;
     }
     this.state = {
-      duration: "",
+      time: "",
       day: "",
       itinerary: itinerary
     };
@@ -27,7 +27,7 @@ class ResultsContainer extends Component {
     event.preventDefault();
     let formPayload = {
       business_info: this.props.business,
-      duration: this.state.duration,
+      time: this.state.time,
       day: this.state.day,
       itinerary: this.state.itinerary
     };
@@ -54,10 +54,10 @@ class ResultsContainer extends Component {
                 name="day"
                 handleChange={this.handleChange}
               />
-              <DurationField
+              <TimeField
                 content={this.state.time}
-                label="Duration"
-                name="duration"
+                label="time"
+                name="time"
                 handleChange={this.handleChange}
               />
             </div>

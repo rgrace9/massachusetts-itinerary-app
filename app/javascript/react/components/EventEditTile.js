@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { Link } from "react-router";
-import DurationField from "../components/DurationField";
+import TimeField from "../components/TimeField";
 import DayField from "../components/DayField";
 
 class EventEditTile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      duration: "",
+      time: "",
       day: ""
     };
     this.handleUpdate = this.handleUpdate.bind(this);
@@ -21,7 +21,7 @@ class EventEditTile extends Component {
     event.preventDefault();
     let formPayload = {
       business_info: this.props.business,
-      duration: this.state.duration,
+      time: this.state.time,
       day: this.state.day
     };
     fetch(`/api/v1/events/${this.props.eventId}`, {
@@ -65,10 +65,10 @@ class EventEditTile extends Component {
                 name="day"
                 handleChange={this.handleChange}
               />
-              <DurationField
+              <TimeField
                 content={this.state.time}
-                label="Duration"
-                name="duration"
+                label="time"
+                name="time"
                 handleChange={this.handleChange}
               />
             </div>
