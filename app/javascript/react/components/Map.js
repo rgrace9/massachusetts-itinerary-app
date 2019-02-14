@@ -7,30 +7,24 @@ import {
   GoogleMap
 } from "react-google-maps";
 
-
 const GoogleMapMassachusetts = withGoogleMap(props => {
-  console.log(props)
-  return(
-  <GoogleMap
-    ref={props.onMapLoad}
-    defaultZoom={13}
-    center={props.center}
-      >
-  {props.children}
-  </GoogleMap>
-)
+  console.log(props);
+  return (
+    <GoogleMap ref={props.onMapLoad} defaultZoom={13} center={props.center}>
+      {props.children}
+    </GoogleMap>
+  );
 });
 
 class Map extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state = {}
+    this.state = {};
   }
 
-
   render() {
-    let latitude = this.props.latitude
-    let longitude = this.props.longitude
+    let latitude = this.props.latitude;
+    let longitude = this.props.longitude;
     return (
       <div>
         <GoogleMapMassachusetts
@@ -38,24 +32,21 @@ class Map extends Component {
           mapElement={<div style={{ height: `100%` }} />}
           center={{ lat: latitude, lng: longitude }}
         >
-        {this.props.excursions.map(excursion => {
-          return(
-            <Marker
-            key={excursion.business_id}
-            title={excursion.name}
-            position={{ lat: excursion.latitude, lng: excursion.longitude }}
-            />
-          )
-        })}
+          {this.props.excursions.map(excursion => {
+            return (
+              <Marker
+                key={excursion.business_id}
+                title={excursion.name}
+                position={{ lat: excursion.latitude, lng: excursion.longitude }}
+              />
+            );
+          })}
         </GoogleMapMassachusetts>
       </div>
     );
   }
 }
 export default Map;
-
-
-
 
 // <GoogleMap
 //   ref={props.onMapLoad}
