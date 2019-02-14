@@ -13,9 +13,11 @@ SEARCH_LIMIT = 10
 
 class ExcursionParser
   attr_reader :data
+  attr_reader :business
 
   def initialize
     @data = []
+    @business = {}
   end
 
   def search(term, location)
@@ -50,7 +52,7 @@ class ExcursionParser
   def business(business_id)
     url = "#{API_HOST}#{BUSINESS_PATH}#{business_id}"
     response = HTTP.auth("Bearer #{ENV["YELP_API_KEY"]}").get(url)
-    response.parse
+    @business = response.parse
   end
 
 

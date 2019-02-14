@@ -19,6 +19,27 @@
 /* display: grid;
  grid-template-columns: auto auto auto auto;
  grid-template-rows: 400px 400px ; */
+.hero-image {
+  background-image: url("https://s3.amazonaws.com/massachusetts-itinerary-app-development/massachusetts.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 100%;
+}
+
+.events-container {
+  align-items: center;
+}
+.event-tile {
+  background-color: lightgray;
+  border-radius: 28px;
+  width: 65%;
+  margin-left: 60px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
 .rebecca-center {
   transform: translate(255px);
 }

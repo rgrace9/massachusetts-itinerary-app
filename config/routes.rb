@@ -38,14 +38,15 @@ resources :excursions, only: :show
   namespace :api do
     namespace :v1 do
       resources :events, only: [:index, :create, :new, :show, :update, :destroy]
-      resources :categories, only: :index
     end
   end
 
   namespace :api do
     namespace :v1 do
       resources :users, only: [:index, :show]
-      resources :itineraries, only: [:create, :index, :show]
+      resources :itineraries, only: [:create, :index, :show] do
+        resources :events, only: [:index]
+      end
     end
   end
 

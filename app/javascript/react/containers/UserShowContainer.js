@@ -74,7 +74,7 @@ class UserShowContainer extends Component {
       return <ItineraryTile key={itinerary.id} itinerary={itinerary} />;
     });
     return (
-      <div>
+      <div className="hero-image" style={{ height: "1000px" }}>
         <div className="user-show center">
           <div className="row" style={{ textAlign: "center" }}>
             <div className="small-6 columns">
