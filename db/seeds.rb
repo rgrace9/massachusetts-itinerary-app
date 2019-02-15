@@ -19,15 +19,6 @@ southeast = Region.create(name: "Southeast", image: "https://s3.amazonaws.com/ma
 
 
 city_list = [
-  ["Boston", greater_boston],
-  ["Newton", greater_boston],
-  ["Cambridge", greater_boston],
-  ["Brookline", greater_boston],
-  ["Arlington", greater_boston],
-  ["Somerville", greater_boston],
-  ["Needham", greater_boston],
-  ["Foxborough", greater_boston],
-  ["Lexington", greater_boston],
   ["Springfield", western],
   ["Williamstown", western],
   ["Stockbridge", western],
@@ -56,6 +47,21 @@ city_list = [
 ]
 city_list.each do |name, region|
   City.create(name: name, region: region)
+end
+
+greater_boston_cities = [
+  ["Boston", greater_boston, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/boston_tile.jpeg"],
+  ["Newton", greater_boston, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/newton-tile2.JPG"],
+  ["Cambridge", greater_boston, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/cambridge-tile.jpg"],
+  ["Brookline", greater_boston, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/brookline-tile.jpg"],
+  ["Arlington", greater_boston, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/arlington-tile2.jpg"],
+  ["Somerville", greater_boston, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/somerville-tile.jpg"],
+  ["Needham", greater_boston, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/needham-tile.jpg"],
+  ["Foxborough", greater_boston, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/foxborough-tile2.jpg"],
+  ["Lexington", greater_boston, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/lexington-tile.jpg"],
+]
+greater_boston_cities.each do |name, region, image|
+  City.create(name: name, region: region, image: image)
 end
 
 user_list = [

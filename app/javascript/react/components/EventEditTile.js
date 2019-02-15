@@ -6,12 +6,13 @@ import moment from "moment";
 
 class EventEditTile extends Component {
   constructor(props) {
+    console.log(props);
     let timeString = props.event.time;
     let inputTime = moment(timeString);
-    let time = inputTime.format("h:mm a");
+    let time = inputTime.format("HH:mm");
     let dateString = props.event.day;
     let inputDay = moment(dateString);
-    let day = inputDay.format("LL");
+    let day = inputDay.format("MM/DD/YYYY");
 
     super(props);
     this.state = {
@@ -25,6 +26,7 @@ class EventEditTile extends Component {
   handleChange(event) {
     this.setState({ [event.target.name]: event.target.value });
   }
+
   handleUpdate(event) {
     event.preventDefault();
     let formPayload = {
@@ -51,13 +53,15 @@ class EventEditTile extends Component {
         }
       })
       .then(response => response.json())
-      .then(newEvent => {
-        let currentEvents = this.state.events;
-
-        this.setState({ events: currentEvents.concat(newEvent) });
+      .then(body => {
+        this.setState({ day: body.event.day, time: body.event.time });
       })
       .catch(error => console.log(`Error in fetch: ${error.message}`));
   }
+  //
+  // handleEdit(event) {
+  //   this.handleUpdate(event);
+  // }
 
   render() {
     return (

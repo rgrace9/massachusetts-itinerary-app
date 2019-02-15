@@ -10,6 +10,7 @@ class ItineraryShowContainer extends Component {
       events: []
     };
     this.onClickDelete = this.onClickDelete.bind(this);
+    this.updateEventList = this.updateEventList.bind(this);
   }
 
   onClickDelete(id) {
@@ -38,7 +39,7 @@ class ItineraryShowContainer extends Component {
     this.setState({ events: updatedItinerary });
   }
 
-  componentDidMount() {
+  updateEventList() {
     fetch(`/api/v1/itineraries/${this.props.params.id}`)
       .then(response => {
         if (response.ok) {
@@ -59,6 +60,10 @@ class ItineraryShowContainer extends Component {
       .catch(error => console.log(`Error in fetch: ${error.message}`));
   }
 
+  componentDidMount() {
+    this.updateEventList();
+  }
+
   render() {
     let events = this.state.events.map((event, index) => {
       return (
@@ -66,6 +71,7 @@ class ItineraryShowContainer extends Component {
           key={index}
           event={event}
           onClickDelete={this.onClickDelete}
+          updateEventList={this.updateEventList}
         />
       );
     });

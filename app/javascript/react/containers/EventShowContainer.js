@@ -33,6 +33,7 @@ class EventShowContainer extends Component {
       editing: false
     });
   }
+
   onClickDelete = () => {
     this.props.onClickDelete(this.props.event.id);
   };
@@ -41,7 +42,12 @@ class EventShowContainer extends Component {
     let tile = <EventShowTile event={this.props.event} />;
 
     if (this.state.editing) {
-      tile = <EventEditTile event={this.props.event} />;
+      tile = (
+        <EventEditTile
+          event={this.props.event}
+          updateEventList={this.props.updateEventList}
+        />
+      );
     }
 
     return (

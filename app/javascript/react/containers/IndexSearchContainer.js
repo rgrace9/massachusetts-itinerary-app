@@ -129,24 +129,26 @@ class IndexSearchContainer extends Component {
     });
     return (
       <div>
-        <h2 className="region-index-heading">Search</h2>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            placeholder="Enter Location"
-            type="text"
-            value={this.state.location}
-            onChange={this.handleChange}
-            name="location"
-          />
-          <input
-            placeholder="Enter Category"
-            type="text"
-            value={this.state.query}
-            onChange={this.handleChange}
-            name="query"
-          />
-          <input type="submit" className="button button-red" />
-        </form>
+        <div className="searchBox">
+          <h2 className="region-index-heading">Search</h2>
+          <form onSubmit={this.handleSubmit}>
+            <input
+              placeholder="Enter Location"
+              type="text"
+              value={this.state.location}
+              onChange={this.handleChange}
+              name="location"
+            />
+            <input
+              placeholder="Enter Category"
+              type="text"
+              value={this.state.query}
+              onChange={this.handleChange}
+              name="query"
+            />
+            <input type="submit" className="button button-red" />
+          </form>
+        </div>
         <div>{results}</div>
       </div>
     );

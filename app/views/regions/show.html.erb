@@ -1,6 +1,21 @@
-<div class="region-show">
-<h1><%=@region.name%></h1>
-  <%@cities.each do |city| %>
-      <h2><%= link_to city.name, city_path(city)%></h2>
-  <%end%>
+
+
+<div class="region-index-page">
+<h2 class="region-index-heading"><%=@region.name%></h2>
+<%@cities.each do |city|%>
+<div class="region">
+  <div class="city-index-tile small-3 columns">
+    <div class="hvrbox">
+      <img src= "<%=city.image%>" class="hvrbox-layer_bottom city-picture"/>
+      <div class="hvrbox-layer_top">
+        <div class="hvrbox-text">
+          <h3 class="region-name">
+            <%= link_to city.name, city_path(city), style: "color: white;"%>
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%end%>
 </div>
