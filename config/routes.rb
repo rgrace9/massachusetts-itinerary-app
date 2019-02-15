@@ -45,7 +45,7 @@ resources :excursions, only: :show
     namespace :v1 do
       resources :users, only: [:index, :show]
       resources :itineraries, only: [:create, :index, :show] do
-        resources :events, only: [:index]
+        resources :events, only: [:index, :show, :update]
       end
     end
   end

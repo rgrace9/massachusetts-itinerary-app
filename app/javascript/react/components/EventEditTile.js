@@ -32,36 +32,12 @@ class EventEditTile extends Component {
     let formPayload = {
       business_info: this.props.event.business,
       time: this.state.time,
-      day: this.state.day
+      day: this.state.day,
+      id: this.props.event.id
     };
-    fetch(`/api/v1/events/${this.props.event.id}`, {
-      credentials: "same-origin",
-      method: "PATCH",
-      body: JSON.stringify(formPayload),
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-      }
-    })
-      .then(response => {
-        if (response.ok) {
-          return response;
-        } else {
-          let errorMessage = `${response.status} (${response.statusText})`,
-            error = new Error(errorMessage);
-          throw error;
-        }
-      })
-      .then(response => response.json())
-      .then(body => {
-        this.setState({ day: body.event.day, time: body.event.time });
-      })
-      .catch(error => console.log(`Error in fetch: ${error.message}`));
+    this.props.updateEventList(formPayload);
+    this.props.notEditEvent();
   }
-  //
-  // handleEdit(event) {
-  //   this.handleUpdate(event);
-  // }
 
   render() {
     return (
@@ -72,7 +48,7 @@ class EventEditTile extends Component {
         <h3>Address: {this.props.event.business.display_address}</h3>
         <form className="small-6" onSubmit={this.handleUpdate}>
           <DayField
-            content={this.state.date}
+            content={this.state.day}
             label="Day"
             name="day"
             handleChange={this.handleChange}

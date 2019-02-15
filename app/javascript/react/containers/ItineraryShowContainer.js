@@ -11,6 +11,7 @@ class ItineraryShowContainer extends Component {
     };
     this.onClickDelete = this.onClickDelete.bind(this);
     this.updateEventList = this.updateEventList.bind(this);
+    this.handleEventTimeUpdate = this.handleEventTimeUpdate.bind(this);
   }
 
   onClickDelete(id) {
@@ -60,6 +61,32 @@ class ItineraryShowContainer extends Component {
       .catch(error => console.log(`Error in fetch: ${error.message}`));
   }
 
+  handleEventTimeUpdate(payload) {
+    fetch(`/api/v1/itineraries/${this.props.params.id}/events/${payload.id}`, {
+      credentials: "same-origin",
+      method: "PATCH",
+      body: JSON.stringify(payload),
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      }
+    })
+      .then(response => {
+        if (response.ok) {
+          return response;
+        } else {
+          let errorMessage = `${response.status} (${response.statusText})`,
+            error = new Error(errorMessage);
+          throw error;
+        }
+      })
+      .then(response => response.json())
+      .then(body => {
+        this.setState({ events: body.events });
+      })
+      .catch(error => console.log(`Error in fetch: ${error.message}`));
+  }
+
   componentDidMount() {
     this.updateEventList();
   }
@@ -71,13 +98,13 @@ class ItineraryShowContainer extends Component {
           key={index}
           event={event}
           onClickDelete={this.onClickDelete}
-          updateEventList={this.updateEventList}
+          handleEventTimeUpdate={this.handleEventTimeUpdate}
         />
       );
     });
 
     return (
-      <div className="hero-image" style={{ height: "1000px" }}>
+      <div className="column">
         <h1 className="region-show">{this.state.name}</h1>
         <div className="events-container">{events}</div>
       </div>

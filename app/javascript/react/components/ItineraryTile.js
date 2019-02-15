@@ -3,7 +3,10 @@ import { Link } from "react-router";
 
 const ItineraryTile = props => {
   return (
-    <div className="review-tile">
+    <div
+      className="itinerary-tile panel row centered"
+      style={{ width: "500px" }}
+    >
       <Link
         to={`/users/${props.itinerary.user_id}/itineraries/${
           props.itinerary.id

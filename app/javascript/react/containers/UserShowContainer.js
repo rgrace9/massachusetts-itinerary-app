@@ -74,26 +74,26 @@ class UserShowContainer extends Component {
       return <ItineraryTile key={itinerary.id} itinerary={itinerary} />;
     });
     return (
-      <div className="hero-image" style={{ height: "1000px" }}>
-        <div className="user-show center">
-          <div className="row" style={{ textAlign: "center" }}>
-            <div className="small-6 columns">
-              <div className="rebecca-center callout">
-                <ItineraryFormContainer
-                  addNewItinerary={this.addNewItinerary}
-                />
-              </div>
+      <div>
+        <div className="small-2 coumns" />
+        <div className="row" style={{ textAlign: "center" }}>
+          <div className="small-6 columns">
+            <div className="rebecca-center">
+              <ItineraryFormContainer addNewItinerary={this.addNewItinerary} />
             </div>
           </div>
-
-          <div className="row">
-            <h2 className="itinerary">Itineraries</h2>
-            <div className="user-itineraries">{itineraries}</div>
-          </div>
         </div>
+
+        <div className="user-itineraries">
+          <h2 className="itinerary">Itineraries</h2>
+          {itineraries}
+        </div>
+
+        <div className="small-2 coumns" />
       </div>
     );
   }
 }
 
 export default UserShowContainer;
+//<div className="user-itineraries">

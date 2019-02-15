@@ -19,6 +19,28 @@
 /* display: grid;
  grid-template-columns: auto auto auto auto;
  grid-template-rows: 400px 400px ; */
+
+label {
+  font-size: 25px;
+  font-family: "Montserrat", sans-serif;
+  /* font-weight: bold; */
+}
+.result-tile {
+  object-fit: cover;
+  object-position: center;
+  /* height: 400px;
+  width: 100%; */
+}
+.itinerary-tile {
+  object-position: center;
+  border-radius: 20px;
+  text-align: center;
+  border-radius: 10px;
+  border: 5px solid #00004d;
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  /* transform: translate(400px); */
+}
 .city-index-tile {
   height: 500px;
   border: 2px;
@@ -34,33 +56,39 @@
 
 .searchBox {
   background-image: url("https://s3.amazonaws.com/massachusetts-itinerary-app-development/boston-skyline2.jpg");
-  border-radius: 10px;
   padding: 15px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 .homepage {
   font-size: 30px;
 }
-.hero-image {
-  background-image: url("https://s3.amazonaws.com/massachusetts-itinerary-app-development/map_massachusetts.jpg");
-  background-position: center;
+/* .hero-image {
+  background-image: url("https://s3.amazonaws.com/massachusetts-itinerary-app-development/map_massachusetts+2.jpg");
+  background-position: fixed;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  opacity: 0.7;
+
   height: 100%;
-}
+} */
 
 .events-container {
   align-items: center;
+  object-position: center;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  width: 1050px;
+  transform: translate(140px);
 }
 .event-tile {
-  background-color: lightgray;
+  background-color: white;
   border-radius: 28px;
   width: 65%;
   margin-left: 60px;
   margin-bottom: 25px;
   text-align: center;
+  border: 10px solid #00004d;
 }
 
 .rebecca-center {
@@ -78,13 +106,12 @@
 .itinerary-heading {
   text-align: center;
 }
-.user-itineraries {
-  align-items: center;
-}
+
 .itinerary-container {
   align-items: center;
   justify-content: center;
   text-align: center;
+  width: 100%;
 }
 .button-signup {
   background-color: white;
@@ -202,7 +229,7 @@ p {
 }
 
 .panel {
-  background-color: #ddedef;
+  background-color: white;
 }
 
 .grid-container {
@@ -257,6 +284,7 @@ p {
 }
 .user-itineraries {
   right: auto;
+  align-items: center;
 }
 .heading {
   text-align: center;
@@ -449,4 +477,8 @@ body {
   display: inline-block;
   text-align: center;
   align-items: center;
+}
+
+.columnMargin {
+  padding: 1rem;
 }
