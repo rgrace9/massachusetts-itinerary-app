@@ -4,7 +4,7 @@ class Api::V1::ItinerariesController < ApplicationController
 
   def show
     itinerary = Itinerary.find(params[:id])
-    events = itinerary.events.order(:day)
+    events = itinerary.events.order(:day, :time)
     events = events.map do |event|
       EventSerializer.new(event)
     end
@@ -18,7 +18,7 @@ class Api::V1::ItinerariesController < ApplicationController
   end
 
   def index
-    render json: Itinerary.all.order(:day)
+    render json: Itinerary.all
   end
 
   def create

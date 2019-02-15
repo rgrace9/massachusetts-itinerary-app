@@ -4,15 +4,18 @@ class Api::V1::EventsController < Api::V1::ApiController
     render json: Event.all
   end
 
+
+
   def update
     event = Event.find(params[:id])
-
-    if event.update_attributes(event_params)
+    if event.update_attributes(event_update_params)
       render json: event
     else
       render json: {error: event.errors}, status: :unprocessable_entity
     end
   end
+
+
   def create
     business = Business.find_or_create_by(business_params)
 
@@ -26,8 +29,10 @@ class Api::V1::EventsController < Api::V1::ApiController
   end
 
   def destroy
-    event = Event.find(params[:event_id])
+    event = Event.find(params[:id])
     event.delete
+
+
   end
 
   private
@@ -49,9 +54,16 @@ class Api::V1::EventsController < Api::V1::ApiController
 
   def event_params
     {
-      duration: params[:duration],
+      time: params[:time],
       day: params[:day],
       itinerary_id: params[:itinerary]
+    }
+  end
+
+  def event_update_params
+    {
+      time: params[:time],
+      day: params[:day]
     }
   end
 

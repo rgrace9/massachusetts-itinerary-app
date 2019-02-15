@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_13_190143) do
+ActiveRecord::Schema.define(version: 2019_02_15_033328) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,35 +29,19 @@ ActiveRecord::Schema.define(version: 2019_02_13_190143) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "categories", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "yelp_name", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "cities", force: :cascade do |t|
     t.string "name", null: false
     t.bigint "region_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image"
     t.index ["name"], name: "index_cities_on_name", unique: true
     t.index ["region_id"], name: "index_cities_on_region_id"
   end
 
-  create_table "comments", force: :cascade do |t|
-    t.text "body", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "user_id", null: false
-    t.bigint "excursion_id", null: false
-    t.index ["excursion_id"], name: "index_comments_on_excursion_id"
-    t.index ["user_id"], name: "index_comments_on_user_id"
-  end
-
   create_table "events", force: :cascade do |t|
-    t.float "duration", null: false
     t.date "day", null: false
+    t.time "time", null: false
     t.bigint "itinerary_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -9,9 +9,37 @@ class ItineraryShowContainer extends Component {
       name: "",
       events: []
     };
+    this.onClickDelete = this.onClickDelete.bind(this);
+    this.updateEventList = this.updateEventList.bind(this);
   }
 
-  componentDidMount() {
+  onClickDelete(id) {
+    console.log(id);
+    fetch(`/api/v1/events/${id}`, {
+      method: "DELETE",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      }
+    }).then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+          error = new Error(errorMessage);
+        throw error;
+      }
+    });
+    let eventToDelete = this.state.events.find(
+      deletedEvent => deletedEvent.id === id
+    );
+    let updatedItinerary = this.state.events.filter(
+      item => item !== eventToDelete
+    );
+    this.setState({ events: updatedItinerary });
+  }
+
+  updateEventList() {
     fetch(`/api/v1/itineraries/${this.props.params.id}`)
       .then(response => {
         if (response.ok) {
@@ -32,13 +60,24 @@ class ItineraryShowContainer extends Component {
       .catch(error => console.log(`Error in fetch: ${error.message}`));
   }
 
+  componentDidMount() {
+    this.updateEventList();
+  }
+
   render() {
     let events = this.state.events.map((event, index) => {
-      return <EventShowContainer key={index} event={event} />;
+      return (
+        <EventShowContainer
+          key={index}
+          event={event}
+          onClickDelete={this.onClickDelete}
+          updateEventList={this.updateEventList}
+        />
+      );
     });
 
     return (
-      <div>
+      <div className="hero-image" style={{ height: "1000px" }}>
         <h1 className="region-show">{this.state.name}</h1>
         <div className="events-container">{events}</div>
       </div>

@@ -1,6 +1,6 @@
 import React from "react";
 
-const DurationField = props => {
+const TimeField = props => {
   return (
     <label>
       {props.label}
@@ -14,4 +14,4 @@ const DurationField = props => {
   );
 };
 
-export default DurationField;
+export default TimeField;
