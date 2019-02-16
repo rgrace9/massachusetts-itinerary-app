@@ -10,8 +10,8 @@ class CreateEvents < ActiveRecord::Migration[5.2]
       t.decimal :longitude
       t.string :city
       t.string :display_address
-      t.date :day, null: false
-      t.time :time, null: false
+      t.datetime :start_day_time, null: false
+      t.datetime :end_day_time
 
       t.belongs_to :itinerary, null: false
       t.timestamps null: false

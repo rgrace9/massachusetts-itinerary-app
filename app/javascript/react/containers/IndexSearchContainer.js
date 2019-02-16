@@ -128,26 +128,33 @@ class IndexSearchContainer extends Component {
       );
     });
     return (
-      <div>
-        <div className="searchBox">
-          <h2 className="region-index-heading">Search</h2>
-          <form onSubmit={this.handleSubmit}>
-            <input
-              placeholder="Location"
-              type="text"
-              value={this.state.location}
-              onChange={this.handleChange}
-              name="location"
-            />
-            <input
-              placeholder="Category"
-              type="text"
-              value={this.state.query}
-              onChange={this.handleChange}
-              name="query"
-            />
-            <input type="submit" className="button button-red" />
-          </form>
+      <div className="columns 12-small">
+        <div className="row">
+          <div className="searchBox">
+            <h2 className="region-index-heading">Search</h2>
+            <form onSubmit={this.handleSubmit}>
+              <div className="small-6 columns">
+                <input
+                  placeholder="Location"
+                  type="text"
+                  value={this.state.location}
+                  onChange={this.handleChange}
+                  name="location"
+                />
+              </div>
+
+              <div className="small-6 columns">
+                <input
+                  placeholder="Category"
+                  type="text"
+                  value={this.state.query}
+                  onChange={this.handleChange}
+                  name="query"
+                />
+              </div>
+              <input type="submit" className="button button-red" />
+            </form>
+          </div>
         </div>
         <div className="columns centered">{results}</div>
       </div>

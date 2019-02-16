@@ -1,10 +1,13 @@
 class Api::V1::EventsController < Api::V1::ApiController
 
   def  index
-    render json: Event.all
+    render json: Event.all.order(:start_day_time)
   end
 
-
+  def show
+    event = Event.find(params[:id])
+    render json: event
+  end
 
   def update
     event = Event.find(params[:id])
@@ -54,16 +57,18 @@ class Api::V1::EventsController < Api::V1::ApiController
 
   def event_params
     {
-      time: params[:time],
-      day: params[:day],
+      start_event_time: params[:start_event_time],
+      start_event_day: params[:start_event_day],
+      start_day_time: params[:start_day_time],
       itinerary_id: params[:itinerary]
     }
   end
 
   def event_update_params
     {
-      time: params[:time],
-      day: params[:day]
+      start_event_time: params[:start_event_time],
+      start_event_day: params[:start_event_day],
+      start_day_time: params[:start_day_time]
     }
   end
 

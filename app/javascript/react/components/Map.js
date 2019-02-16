@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 import {
   withScriptjs,
   withGoogleMap,
@@ -19,7 +20,9 @@ const GoogleMapMassachusetts = withGoogleMap(props => {
 class Map extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      clickedMarker: null
+    };
   }
 
   render() {
@@ -28,17 +31,33 @@ class Map extends Component {
     return (
       <div>
         <GoogleMapMassachusetts
-          containerElement={<div style={{ height: `500px`, width: "500px" }} />}
+          containerElement={<div style={{ height: `600px`, width: "600px" }} />}
           mapElement={<div style={{ height: `100%` }} />}
           center={{ lat: latitude, lng: longitude }}
         >
           {this.props.excursions.map(excursion => {
             return (
               <Marker
-                key={excursion.business_id}
-                title={excursion.name}
-                position={{ lat: excursion.latitude, lng: excursion.longitude }}
-              />
+                key={excursion.id}
+                position={{
+                  lat: excursion.latitude,
+                  lng: excursion.longitude
+                }}
+              >
+                <InfoWindow key={excursion.business_id}>
+                  <div
+                    style={{
+                      backgroundColor: `white`,
+                      opacity: 0.75,
+                      padding: `5px`
+                    }}
+                  >
+                    <p style={{ fontSize: `16px`, fontColor: `#08233B` }}>
+                      {excursion.name}
+                    </p>
+                  </div>
+                </InfoWindow>
+              </Marker>
             );
           })}
         </GoogleMapMassachusetts>
