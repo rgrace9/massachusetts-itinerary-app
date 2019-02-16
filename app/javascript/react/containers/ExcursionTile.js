@@ -36,6 +36,7 @@ class ExcursionTile extends Component {
   }
 
   render() {
+    debugger;
     return (
       <div className="columns">
         <div className="panel">

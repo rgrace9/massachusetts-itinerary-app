@@ -132,9 +132,3 @@ class CityShowContainer extends Component {
 }
 
 export default CityShowContainer;
-
-// <ExcursionShowContainer
-//   id={index + 1}
-//   itineraries={userItineraries}
-//   business={business}
-// />
