@@ -22,6 +22,7 @@ city_list = [
   ["Springfield", western],
   ["Williamstown", western],
   ["Stockbridge", western],
+  ["Pittsfield", western],
   ["Lenox", western],
   ["Great Barrington", western],
   ["Worcester", central],

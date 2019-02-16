@@ -55,9 +55,8 @@ label {
 }
 
 .searchBox {
-  background-image: url("https://s3.amazonaws.com/massachusetts-itinerary-app-development/boston-skyline2.jpg");
   padding: 15px;
-  /* border: 1px solid black; */
+  border: 1px solid black;
 }
 .homepage {
   font-size: 30px;
@@ -89,6 +88,20 @@ label {
   margin-bottom: 25px;
   text-align: center;
   border: 10px solid #00004d;
+}
+
+.itinerary-tile-container {
+  background-color: white;
+  padding: 20px;
+  margin: 100px;
+  margin-bottom: 25px;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  background-image: url("https://nyc3.digitaloceanspaces.com/production-age-friendly/uploads/city/17909/image/241011/image/boston-2.jpg");
 }
 
 .rebecca-center {
@@ -282,9 +295,21 @@ p {
   margin: auto;
   max-width: 600px;
 }
+.scroll {
+  height: 1000px;
+  overflow: scroll;
+}
+.itinerary-scroll {
+  overflow: scroll;
+}
 .user-itineraries {
   right: auto;
   align-items: center;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Boston_Twilight_Panorama_3.jpg/1800px-Boston_Twilight_Panorama_3.jpg");
+  background-position: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
 .heading {
   text-align: center;

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 import {
   withScriptjs,
   withGoogleMap,
@@ -7,6 +8,7 @@ import {
   GoogleMap
 } from "react-google-maps";
 import MapMarkers from "./MapMarkers";
+
 const GoogleMapMassachusetts = withGoogleMap(props => {
   console.log(props);
   return (
@@ -22,10 +24,6 @@ class Map extends Component {
     this.state = {
       clickedMarker: null
     };
-    this.onMarkerClick = this.onMarkerClick.bind(this);
-  }
-  onMarkerClick(business_id) {
-    this.setState({ clickedMarker: business_id });
   }
 
   render() {
@@ -34,28 +32,32 @@ class Map extends Component {
     return (
       <div>
         <GoogleMapMassachusetts
-          containerElement={<div style={{ height: `500px`, width: "500px" }} />}
+          containerElement={<div style={{ height: `600px`, width: "600px" }} />}
           mapElement={<div style={{ height: `100%` }} />}
           center={{ lat: latitude, lng: longitude }}
         >
           {this.props.excursions.map(excursion => {
-            let onClick = () => {
-              this.onMarkerClick(excursion.id);
-            };
             return (
               <Marker
                 key={excursion.id}
-                title={excursion.name}
-                position={{ lat: excursion.latitude, lng: excursion.longitude }}
-                info={excursion}
+                position={{
+                  lat: excursion.latitude,
+                  lng: excursion.longitude
+                }}
               >
-                {this.state.clickedMarker == excursion.id && (
-                  <InfoWindow>
-                    <div>
-                      <p>{excursion.name}</p>
-                    </div>
-                  </InfoWindow>
-                )}
+                <InfoWindow>
+                  <div
+                    style={{
+                      backgroundColor: `white`,
+                      opacity: 0.75,
+                      padding: `5px`
+                    }}
+                  >
+                    <p style={{ fontSize: `16px`, fontColor: `#08233B` }}>
+                      {excursion.name}
+                    </p>
+                  </div>
+                </InfoWindow>
               </Marker>
             );
           })}

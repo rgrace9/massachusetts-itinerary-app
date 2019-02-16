@@ -74,22 +74,22 @@ class UserShowContainer extends Component {
       return <ItineraryTile key={itinerary.id} itinerary={itinerary} />;
     });
     return (
-      <div>
-        <div className="small-2 coumns" />
-        <div className="row" style={{ textAlign: "center" }}>
-          <div className="small-6 columns">
-            <div className="rebecca-center">
+      <div className="itinerary-tile-container" style={{ height: "800" }}>
+        <div style={{ marginTop: "50px" }}>
+          <div className="small-2 coumns" />
+          <div className="row" style={{ textAlign: "center" }}>
+            <div className="small-6 columns">
+              <div className="rebecca-center" />
+            </div>
+          </div>
+          <div>
+            <div className="small-2 columns panel">
               <ItineraryFormContainer addNewItinerary={this.addNewItinerary} />
             </div>
           </div>
+          <div className="itinerary-scroll">{itineraries}</div>
+          <div className="small-2 coumns" />
         </div>
-
-        <div className="user-itineraries">
-          <h2 className="itinerary">Itineraries</h2>
-          {itineraries}
-        </div>
-
-        <div className="small-2 coumns" />
       </div>
     );
   }
