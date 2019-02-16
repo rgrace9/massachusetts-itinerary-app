@@ -20,6 +20,15 @@
  grid-template-columns: auto auto auto auto;
  grid-template-rows: 400px 400px ; */
 
+.itinerary-form {
+  text-align: center;
+  left: auto;
+  padding: 10px;
+  margin: auto;
+  border-radius: 10px;
+  border: 10px solid black;
+}
+
 label {
   font-size: 25px;
   font-family: "Montserrat", sans-serif;
@@ -36,10 +45,9 @@ label {
   border-radius: 20px;
   text-align: center;
   border-radius: 10px;
-  border: 5px solid #00004d;
+  border: 15px solid black;
   display: block;
   font-family: "Montserrat", sans-serif;
-  /* transform: translate(400px); */
 }
 .city-index-tile {
   height: 500px;
@@ -81,13 +89,15 @@ label {
   transform: translate(140px);
 }
 .event-tile {
-  background-color: white;
+  background-color: #deefe3;
+
+  /* #d7eadb */
   border-radius: 28px;
   width: 65%;
   margin-left: 60px;
   margin-bottom: 25px;
   text-align: center;
-  border: 10px solid #00004d;
+  border: 10px solid black;
 }
 
 .itinerary-tile-container {
@@ -139,6 +149,20 @@ label {
   font-size: 20px;
   border: 1px solid black;
 }
+
+/* background-color: white;
+color: black;
+font-family: "Montserrat", sans-serif;
+border-radius: 10px;
+display: flex;
+align-items: center;
+justify-content: center;
+margin: auto;
+margin-top: 10px;
+margin-bottom: 20px;
+height: 45px;
+font-size: 20px;
+border: 1px solid black; */
 
 .button-signup:visited {
   background-color: #bfc9d1;
@@ -264,6 +288,7 @@ p {
   margin: auto;
   margin-top: 10px;
   margin-bottom: 20px;
+  height: 45px;
   font-size: 20px;
   border: 1px solid black;
 }
@@ -288,13 +313,7 @@ p {
   position: relative;
   padding: 100px;
 }
-.itinerary-form {
-  text-align: center;
-  left: auto;
-  padding: 10px;
-  margin: auto;
-  max-width: 600px;
-}
+
 .scroll {
   height: 1000px;
   overflow: scroll;
