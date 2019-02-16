@@ -1,7 +1,8 @@
 class Api::V1::QueriesController < Api::V1::ApiController
 
   def search
-    location = params[:location]
+    city = params[:location]
+    location = "#{city}, MA"
     term = params[:query]
     excursion_parser = ExcursionParser.new
     excursion_parser.search(term, location)

@@ -133,14 +133,14 @@ class IndexSearchContainer extends Component {
           <h2 className="region-index-heading">Search</h2>
           <form onSubmit={this.handleSubmit}>
             <input
-              placeholder="Enter Location"
+              placeholder="Location"
               type="text"
               value={this.state.location}
               onChange={this.handleChange}
               name="location"
             />
             <input
-              placeholder="Enter Category"
+              placeholder="Category"
               type="text"
               value={this.state.query}
               onChange={this.handleChange}
@@ -149,7 +149,7 @@ class IndexSearchContainer extends Component {
             <input type="submit" className="button button-red" />
           </form>
         </div>
-        <div>{results}</div>
+        <div className="columns centered">{results}</div>
       </div>
     );
   }
