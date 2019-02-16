@@ -6,7 +6,7 @@ import {
   Marker,
   GoogleMap
 } from "react-google-maps";
-
+import MapMarkers from "./MapMarkers";
 const GoogleMapMassachusetts = withGoogleMap(props => {
   console.log(props);
   return (
@@ -19,7 +19,13 @@ const GoogleMapMassachusetts = withGoogleMap(props => {
 class Map extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      clickedMarker: null
+    };
+    this.onMarkerClick = this.onMarkerClick.bind(this);
+  }
+  onMarkerClick(business_id) {
+    this.setState({ clickedMarker: business_id });
   }
 
   render() {
@@ -33,12 +39,24 @@ class Map extends Component {
           center={{ lat: latitude, lng: longitude }}
         >
           {this.props.excursions.map(excursion => {
+            let onClick = () => {
+              this.onMarkerClick(excursion.id);
+            };
             return (
               <Marker
-                key={excursion.business_id}
+                key={excursion.id}
                 title={excursion.name}
                 position={{ lat: excursion.latitude, lng: excursion.longitude }}
-              />
+                info={excursion}
+              >
+                {this.state.clickedMarker == excursion.id && (
+                  <InfoWindow>
+                    <div>
+                      <p>{excursion.name}</p>
+                    </div>
+                  </InfoWindow>
+                )}
+              </Marker>
             );
           })}
         </GoogleMapMassachusetts>

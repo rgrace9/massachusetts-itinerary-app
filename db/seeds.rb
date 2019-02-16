@@ -61,6 +61,7 @@ greater_boston_cities = [
   ["Lexington", greater_boston, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/lexington-tile.jpg"],
 ]
 greater_boston_cities.each do |name, region, image|
+  # City.find_or_create_by(name: name, region: region, image: image)
   City.create(name: name, region: region, image: image)
 end
 
