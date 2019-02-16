@@ -3,9 +3,22 @@
 This app allows users to create itineraries for excursions in Massachusetts. It uses a Ruby on Rails backend and React frontend.
 
 ## Getting Started
-You will need keys for the Yelp API and Google Maps API. User uploaded files are saved in the cloud with Amazon S3 and the CarrierWave gem.
+You will need keys for the Yelp API and and Google Maps API. User uploaded files are saved in the cloud with Amazon S3 and the CarrierWave gem.
 
-Yelp API - https://www.yelp.com/developers/documentation/v3
-Google Maps API - https://developers.google.com/maps/documentation/
-AWS - https://aws.amazon.com/
+[Yelp API](https://www.yelp.com/developers/documentation/v3)
+
+[Google Maps API](https://developers.google.com/maps/documentation/)
+
+[AWS](https://aws.amazon.com/)
+
+## Languages & Tools
+
+-Javascript -- React
+
+-CSS -- Foundation
+  
+-Ruby -- Rails
+
+
+
 
