@@ -4,7 +4,7 @@ class Api::V1::ItinerariesController < ApplicationController
 
   def show
     itinerary = Itinerary.find(params[:id])
-    events = itinerary.events.order(:day, :time)
+    events = itinerary.events.order(:start_day_time)
     events = events.map do |event|
       EventSerializer.new(event)
     end

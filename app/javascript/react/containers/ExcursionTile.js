@@ -12,8 +12,8 @@ class ExcursionTile extends Component {
       itinerary = this.props.itineraries[0].id;
     }
     this.state = {
-      time: "",
-      day: "",
+      start_event_time: "",
+      start_event_day: "",
       itinerary: itinerary
     };
 
@@ -28,8 +28,8 @@ class ExcursionTile extends Component {
     event.preventDefault();
     let formPayload = {
       business_info: this.props.business,
-      time: this.state.time,
-      day: this.state.day,
+      start_event_time: this.state.start_event_time,
+      start_event_day: this.state.start_event_day,
       itinerary: this.state.itinerary
     };
     this.props.addEvent(formPayload);
@@ -51,15 +51,15 @@ class ExcursionTile extends Component {
             />
             <div className="small-6">
               <DayField
-                content={this.state.date}
+                content={this.state.start_event_day}
                 label="Day"
-                name="day"
+                name="start_event_day"
                 handleChange={this.handleChange}
               />
               <TimeField
-                content={this.state.time}
+                content={this.state.start_event_time}
                 label="Start Time"
-                name="time"
+                name="start_event_time"
                 handleChange={this.handleChange}
               />
             </div>

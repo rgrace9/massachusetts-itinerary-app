@@ -114,7 +114,7 @@ label {
   background-image: url("https://nyc3.digitaloceanspaces.com/production-age-friendly/uploads/city/17909/image/241011/image/boston-2.jpg");
 }
 
-.rebecca-center {
+.name-center {
   transform: translate(255px);
 }
 .user-show {
@@ -165,21 +165,25 @@ font-size: 20px;
 border: 1px solid black; */
 
 .button-signup:visited {
-  background-color: #bfc9d1;
+  background-color: #eae9a6;
 }
 
 button:visited {
-  background-color: #bfc9d1;
+  background-color: #eae9a6;
 }
 .button-signup.a {
-  background-color: #bfc9d1;
+  background-color: #eae9a6;
+  color: black;
 }
 
 .button-signup:hover {
-  background-color: #d0c2c2;
+  background-color: #eae9a6;
+  color: black;
 }
 .button-signup:focus {
-  background-color: #d0c2c2;
+  background-color: #eae9a6;
+  color: black;
+  font-weight: bold;
 }
 
 .prof-photo-upload > input {
@@ -288,16 +292,18 @@ p {
   margin: auto;
   margin-top: 10px;
   margin-bottom: 20px;
-  height: 45px;
   font-size: 20px;
   border: 1px solid black;
 }
 
 .button-red:hover {
-  background-color: #d0c2c2;
+  background-color: #eae9a6;
+  color: black;
 }
 .button-red:focus {
-  background-color: #d0c2c2;
+  background-color: #eae9a6;
+  color: black;
+  font-weight: bold;
 }
 
 .profile-img {

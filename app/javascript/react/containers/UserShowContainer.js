@@ -79,7 +79,7 @@ class UserShowContainer extends Component {
           <div className="small-2 coumns" />
           <div className="row" style={{ textAlign: "center" }}>
             <div className="small-6 columns">
-              <div className="rebecca-center" />
+              <div className="name-center" />
             </div>
           </div>
           <div>

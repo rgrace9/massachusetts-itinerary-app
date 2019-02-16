@@ -19,38 +19,6 @@ southeast = Region.create(name: "Southeast", image: "https://s3.amazonaws.com/ma
 
 
 city_list = [
-  ["Springfield", western],
-  ["Williamstown", western],
-  ["Stockbridge", western],
-  ["Pittsfield", western],
-  ["Lenox", western],
-  ["Great Barrington", western],
-  ["Worcester", central],
-  ["Boylston", central],
-  ["Sutton", central],
-  ["Sturbridge", central],
-  ["Bolton", central],
-  ["Gloucester", northeast],
-  ["Lawrence", northeast],
-  ["Lowell", northeast],
-  ["Rockport", northeast],
-  ["Salem", northeast],
-  ["Hyannis", cape],
-  ["Provincetown", cape],
-  ["Falmouth", cape],
-  ["Nantucket", cape],
-  ["Martha's Vineyard", cape],
-  ["Plymouth", southeast],
-  ["Abington", southeast],
-  ["Attleboro", southeast],
-  ["Avon", southeast],
-  ["Wrentham", southeast]
-]
-city_list.each do |name, region|
-  City.create(name: name, region: region)
-end
-
-greater_boston_cities = [
   ["Boston", greater_boston, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/boston_tile.jpeg"],
   ["Newton", greater_boston, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/newton-tile2.JPG"],
   ["Cambridge", greater_boston, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/cambridge-tile2.jpg"],
@@ -60,8 +28,33 @@ greater_boston_cities = [
   ["Needham", greater_boston, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/needham-region-tile2.jpg"],
   ["Foxborough", greater_boston, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/foxborough-tile2.jpg"],
   ["Lexington", greater_boston, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/lexington-tile3.jpg"],
+  ["Springfield", western, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/springfield-tile.jpg"],
+  ["Williamstown", western, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/williamstown-tile.JPG"],
+  ["Stockbridge", western, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/stockbridge-tile.jpg"],
+  ["Pittsfield", western, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/pittsfield-tile.jpg"],
+  ["Lenox", western, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/lenox-tile.jpg"],
+  ["Great Barrington", western, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/great-barrington-tile.jpg"],
+  ["Worcester", central, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/worcester-tile.jpg"],
+  ["Boylston", central, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/west-boylston-tile.jpg"],
+  ["Sutton", central, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/sutton-tile.jpg"],
+  ["Sturbridge", central, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/sturbridge-tile.jpg"],
+  ["Bolton", central, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/bolton-tile2.JPG"],
+  ["Gloucester", northeast, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/gloucester-tile.jpeg"],
+  ["Lawrence", northeast, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/lawrence-tile.jpg"],
+  ["Lowell", northeast, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/lowell-ma.jpg"],
+  ["Rockport", northeast, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/rockport-tile.jpg"],
+  ["Salem", northeast, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/salem-tile.jpg"],
+  ["Hyannis", cape, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/hyannis.jpg"],
+  ["Provincetown", cape, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/provincetown-ma.jpg"],
+  ["Falmouth", cape, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/falmouth-tile.jpg"],
+  ["Nantucket", cape, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/nantucket-tile.jpeg"],
+  ["Martha's Vineyard", cape, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/vineyard-tile.jpg"],
+  ["Plymouth", southeast, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/plymouth-tile.jpg"],
+  ["Abington", southeast, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/abington-tile.jpg"],
+  ["Attleboro", southeast, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/attleboro-tile.jpg"],
+  ["Avon", southeast, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/avon-tile.jpg"],
+  ["Wrentham", southeast, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/wrentham-tile.jpg"]
 ]
-greater_boston_cities.each do |name, region, image|
-  # City.find_or_create_by(name: name, region: region, image: image)
+city_list.each do |name, region, image|
   City.create(name: name, region: region, image: image)
 end

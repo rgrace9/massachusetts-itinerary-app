@@ -7,7 +7,6 @@ import {
   Marker,
   GoogleMap
 } from "react-google-maps";
-import MapMarkers from "./MapMarkers";
 
 const GoogleMapMassachusetts = withGoogleMap(props => {
   console.log(props);
@@ -45,7 +44,7 @@ class Map extends Component {
                   lng: excursion.longitude
                 }}
               >
-                <InfoWindow>
+                <InfoWindow key={excursion.business_id}>
                   <div
                     style={{
                       backgroundColor: `white`,

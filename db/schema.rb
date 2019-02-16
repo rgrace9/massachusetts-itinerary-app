@@ -40,8 +40,8 @@ ActiveRecord::Schema.define(version: 2019_02_15_033328) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.date "day", null: false
-    t.time "time", null: false
+    t.datetime "start_day_time", null: false
+    t.datetime "end_day_time"
     t.bigint "itinerary_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

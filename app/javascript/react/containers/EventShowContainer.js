@@ -27,18 +27,12 @@ class EventShowContainer extends Component {
     });
   }
 
-  updateEvent(newInfo) {
-    this.setState({
-      event: newInfo,
-      editing: false
-    });
-  }
-
   onClickDelete = () => {
     this.props.onClickDelete(this.props.event.id);
   };
 
   render() {
+    console.log(this.state.event);
     let tile = <EventShowTile event={this.props.event} />;
 
     if (this.state.editing) {
