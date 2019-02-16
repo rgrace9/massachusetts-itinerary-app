@@ -35,8 +35,8 @@ class ResultsContainer extends Component {
   }
   render() {
     return (
-      <div className="columns">
-        <div className="panel">
+      <div>
+        <div className="result-tile panel">
           <h2 className="heading">{this.props.business.name}</h2>
           <img src={this.props.business.image} />
           <form onSubmit={this.handleSubmit}>

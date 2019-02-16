@@ -45,7 +45,8 @@ class EventShowContainer extends Component {
       tile = (
         <EventEditTile
           event={this.props.event}
-          updateEventList={this.props.updateEventList}
+          updateEventList={this.props.handleEventTimeUpdate}
+          notEditEvent={this.notEditEvent}
         />
       );
     }

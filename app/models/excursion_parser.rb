@@ -57,9 +57,3 @@ class ExcursionParser
 
 
 end
-
-# params = {
-#   term: DEFAULT_TERM,
-#   location: DEFAULT_LOCATION,
-#   limit: SEARCH_LIMIT
-#   }

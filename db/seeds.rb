@@ -15,7 +15,7 @@ northeast = Region.create(name: "Northeast", image: "https://s3.amazonaws.com/ma
 
 cape = Region.create(name: "Cape & Islands", image: "https://s3.amazonaws.com/massachusetts-itinerary-app-development/marthasvineyardlighthouse.jpg")
 
-southeast = Region.create(name: "Southeast", image: "https://s3.amazonaws.com/massachusetts-itinerary-app-development/massachusetts-plymouth.jpg")
+southeast = Region.create(name: "Southeast", image: "https://s3.amazonaws.com/massachusetts-itinerary-app-development/plymouth-region-tile.jpg")
 
 
 city_list = [
@@ -52,28 +52,14 @@ end
 greater_boston_cities = [
   ["Boston", greater_boston, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/boston_tile.jpeg"],
   ["Newton", greater_boston, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/newton-tile2.JPG"],
-  ["Cambridge", greater_boston, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/cambridge-tile.jpg"],
+  ["Cambridge", greater_boston, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/cambridge-tile2.jpg"],
   ["Brookline", greater_boston, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/brookline-tile.jpg"],
-  ["Arlington", greater_boston, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/arlington-tile2.jpg"],
+  ["Arlington", greater_boston, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/arlington-tile3.jpg"],
   ["Somerville", greater_boston, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/somerville-tile.jpg"],
-  ["Needham", greater_boston, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/needham-tile.jpg"],
+  ["Needham", greater_boston, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/needham-region-tile2.jpg"],
   ["Foxborough", greater_boston, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/foxborough-tile2.jpg"],
-  ["Lexington", greater_boston, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/lexington-tile.jpg"],
+  ["Lexington", greater_boston, "https://s3.amazonaws.com/massachusetts-itinerary-app-development/cities/lexington-tile3.jpg"],
 ]
 greater_boston_cities.each do |name, region, image|
   City.create(name: name, region: region, image: image)
-end
-
-user_list = [
-  [ "rob@test.com", "password", "password", "https://s3.amazonaws.com/massachusetts-itinerary-app-development/prof-pic-man-2.png", "Rob", "Smith" ],
-
-  [ "bill@test.com", "password", "password", "https://s3.amazonaws.com/massachusetts-itinerary-app-development/prof-pic-man.png", "Bill", "Jackson" ],
-
-  [ "jen@test.com", "password", "password", "https://s3.amazonaws.com/massachusetts-itinerary-app-development/prof-pic-woman.jpeg", "Jenny", "Adams" ],
-
-  [ "emily@test.com", "password", "password", "https://s3.amazonaws.com/massachusetts-itinerary-app-development/no-photo.jpg", "Emily", "Roberts" ]
-]
-
-user_list.each do |email, password, password_confirmation, profile_photo, first_name, last_name|
-  User.create( email: email, password: password, password_confirmation: password_confirmation, profile_photo: { url: profile_photo}, first_name: first_name, last_name: last_name )
 end

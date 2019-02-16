@@ -9,7 +9,7 @@ class Api::V1::EventsController < Api::V1::ApiController
   def update
     event = Event.find(params[:id])
     if event.update_attributes(event_update_params)
-      render json: event
+      render json: event.itinerary.events
     else
       render json: {error: event.errors}, status: :unprocessable_entity
     end
