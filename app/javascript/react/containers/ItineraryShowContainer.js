@@ -104,9 +104,13 @@ class ItineraryShowContainer extends Component {
     });
 
     return (
-      <div className="column">
-        <h1 className="region-show">{this.state.name}</h1>
-        <div className="events-container">{events}</div>
+      <div className="columns">
+        <div className="row">
+          <h1 className="region-show">{this.state.name}</h1>
+        </div>
+        <div className="row">
+          <div className="columns centered">{events}</div>
+        </div>
       </div>
     );
   }
