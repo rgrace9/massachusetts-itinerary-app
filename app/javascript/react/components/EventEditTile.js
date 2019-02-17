@@ -38,7 +38,7 @@ class EventEditTile extends Component {
         <a href={this.props.event.business.url} target="_blank">
           <h2>{this.props.event.business.name}</h2>
         </a>
-        <h3>Address: {this.props.event.business.display_address}</h3>
+        <h3>{this.props.event.business.display_address}</h3>
         <form className="small-6" onSubmit={this.handleUpdate}>
           <DayField
             content={this.state.start_event_day}

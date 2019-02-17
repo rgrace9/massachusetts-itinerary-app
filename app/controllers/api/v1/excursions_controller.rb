@@ -16,12 +16,4 @@ class Api::V1::ExcursionsController < Api::V1::ApiController
     render json: { data: excursion_parser.data, itineraries: itineraries }
   end
 
-  # def business_information
-  #   business_id = Business.find()
-  #   excursion_parser = ExcursionParser.new
-  #   excursion_parser.search(business_id)
-  #
-  #   render json: { data: }
-  # end
-
 end

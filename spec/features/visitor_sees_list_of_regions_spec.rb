@@ -8,5 +8,6 @@ feature "visitor sees a list of all regions" do
     visit regions_path
 
     expect(page).to have_content region_1.name
+    expect(page).to have_css("img[src*='#{region_1.image}']")
   end
 end

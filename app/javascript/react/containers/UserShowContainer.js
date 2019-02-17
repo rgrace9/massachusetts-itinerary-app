@@ -83,7 +83,7 @@ class UserShowContainer extends Component {
             </div>
           </div>
           <div>
-            <div className="small-2 columns panel itinerary-form">
+            <div className="small-4 columns panel itinerary-form">
               <ItineraryFormContainer addNewItinerary={this.addNewItinerary} />
             </div>
           </div>
