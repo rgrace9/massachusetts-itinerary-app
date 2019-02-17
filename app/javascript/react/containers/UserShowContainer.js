@@ -78,16 +78,14 @@ class UserShowContainer extends Component {
         <div style={{ marginTop: "50px" }}>
           <div className="small-2 coumns" />
           <div className="row" style={{ textAlign: "center" }}>
-            <div className="small-6 columns">
-              <div className="name-center" />
-            </div>
+            <div className="small-6 columns" />
           </div>
           <div>
-            <div className="small-4 columns panel itinerary-form">
+            <div className="small-3 columns panel itinerary-form">
               <ItineraryFormContainer addNewItinerary={this.addNewItinerary} />
             </div>
           </div>
-          <div className="itinerary-scroll">{itineraries}</div>
+          <div className="small-6 columns centered">{itineraries}</div>
           <div className="small-2 coumns" />
         </div>
       </div>

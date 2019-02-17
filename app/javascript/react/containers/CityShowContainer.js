@@ -96,11 +96,35 @@ class CityShowContainer extends Component {
   }
 
   render() {
+    let labels = [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "17",
+      "18",
+      "19",
+      "20"
+    ];
+    var labelIndex = 0;
     let businesses = this.state.businesses.map((business, index) => {
       return (
         <ExcursionTile
           key={business.business_id}
           id={index + 1}
+          name={labels[labelIndex++ % labels.length]}
           business={business}
           itineraries={this.state.itineraries}
           addEvent={this.addEvent}

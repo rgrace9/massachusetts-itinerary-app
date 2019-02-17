@@ -19,6 +19,7 @@ class ExcursionTile extends Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleClear = this.handleClear.bind(this);
   }
 
   handleChange(event) {
@@ -33,14 +34,23 @@ class ExcursionTile extends Component {
       itinerary: this.state.itinerary
     };
     this.props.addEvent(formPayload);
+    this.handleClear();
+  }
+
+  handleClear() {
+    this.setState({
+      start_event_time: "",
+      start_event_day: ""
+    });
   }
 
   render() {
-    debugger;
     return (
       <div className="columns">
         <div className="panel">
-          <h2 className="heading">{this.props.business.name}</h2>
+          <h2 className="heading">
+            {this.props.name}. {this.props.business.name}
+          </h2>
           <img src={this.props.business.image} />
           <form onSubmit={this.handleSubmit}>
             <ItineraryField
@@ -59,7 +69,7 @@ class ExcursionTile extends Component {
               />
               <TimeField
                 content={this.state.start_event_time}
-                label="Start Time"
+                label="Time"
                 name="start_event_time"
                 handleChange={this.handleChange}
               />

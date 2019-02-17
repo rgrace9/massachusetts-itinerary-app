@@ -11,7 +11,7 @@ import {
 const GoogleMapMassachusetts = withGoogleMap(props => {
   console.log(props);
   return (
-    <GoogleMap ref={props.onMapLoad} defaultZoom={13} center={props.center}>
+    <GoogleMap ref={props.onMapLoad} defaultZoom={14} center={props.center}>
       {props.children}
     </GoogleMap>
   );
@@ -28,6 +28,29 @@ class Map extends Component {
   render() {
     let latitude = this.props.latitude;
     let longitude = this.props.longitude;
+    let labels = [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "17",
+      "18",
+      "19",
+      "20"
+    ];
+    var labelIndex = 0;
     return (
       <div>
         <GoogleMapMassachusetts
@@ -39,25 +62,13 @@ class Map extends Component {
             return (
               <Marker
                 key={excursion.id}
+                label={labels[labelIndex++ % labels.length]}
+                title={excursion.name}
                 position={{
                   lat: excursion.latitude,
                   lng: excursion.longitude
                 }}
-              >
-                <InfoWindow key={excursion.business_id}>
-                  <div
-                    style={{
-                      backgroundColor: `white`,
-                      opacity: 0.75,
-                      padding: `5px`
-                    }}
-                  >
-                    <p style={{ fontSize: `16px`, fontColor: `#08233B` }}>
-                      {excursion.name}
-                    </p>
-                  </div>
-                </InfoWindow>
-              </Marker>
+              />
             );
           })}
         </GoogleMapMassachusetts>
@@ -66,11 +77,3 @@ class Map extends Component {
   }
 }
 export default Map;
-
-// <GoogleMap
-//   ref={props.onMapLoad}
-//   defaultCenter={{ lat: 42.361145, lng: -71.057083 }}
-//   defaultZoom={13}
-//     >
-// {props.children}
-// </GoogleMap>

@@ -34,27 +34,29 @@ class EventEditTile extends Component {
 
   render() {
     return (
-      <div className="review-tile">
+      <div className="edit-tile centered">
         <a href={this.props.event.business.url} target="_blank">
           <h2>{this.props.event.business.name}</h2>
         </a>
         <h3>{this.props.event.business.display_address}</h3>
-        <form className="small-6" onSubmit={this.handleUpdate}>
-          <DayField
-            content={this.state.start_event_day}
-            label="Day"
-            name="start_event_day"
-            handleChange={this.handleChange}
-          />
-          <TimeField
-            content={this.state.start_event_time}
-            label="Start Time"
-            name="start_event_time"
-            handleChange={this.handleChange}
-          />
+        <div className="small-6 centered">
+          <form onSubmit={this.handleUpdate}>
+            <DayField
+              content={this.state.start_event_day}
+              label="Day"
+              name="start_event_day"
+              handleChange={this.handleChange}
+            />
+            <TimeField
+              content={this.state.start_event_time}
+              label="Start Time"
+              name="start_event_time"
+              handleChange={this.handleChange}
+            />
 
-          <input type="submit" value="Update" className="button button-red" />
-        </form>
+            <input type="submit" value="Update" className="button button-red" />
+          </form>
+        </div>
       </div>
     );
   }
