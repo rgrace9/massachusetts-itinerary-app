@@ -6,7 +6,7 @@ class Event < ApplicationRecord
 
   def start_event_day
     if !@start_event_day_string
-      @start_event_day_string = self.start_day_time.strftime("%A %-m/%d/%Y")
+      @start_event_day_string = self.start_day_time.strftime("%A, %B %d, %Y")
     end
       @start_event_day_string
   end
