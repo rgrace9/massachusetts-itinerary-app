@@ -49,7 +49,7 @@ class EventEditTile extends Component {
             />
             <TimeField
               content={this.state.start_event_time}
-              label="Start Time"
+              label="Time"
               name="start_event_time"
               handleChange={this.handleChange}
             />
