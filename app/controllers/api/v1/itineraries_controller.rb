@@ -17,6 +17,11 @@ class Api::V1::ItinerariesController < ApplicationController
     }
   end
 
+  def destroy
+    itinerary = Itinerary.find(params[:id])
+    itinerary.delete
+  end
+
   def index
     render json: Itinerary.all
   end
