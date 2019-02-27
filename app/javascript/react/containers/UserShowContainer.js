@@ -14,7 +14,35 @@ class UserShowContainer extends Component {
       itineraries: []
     };
     this.addNewItinerary = this.addNewItinerary.bind(this);
+    this.onClickDelete = this.onClickDelete.bind(this);
   }
+
+  onClickDelete(id) {
+    console.log(id);
+    fetch(`/api/v1/itineraries/${id}`, {
+      method: "DELETE",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      }
+    }).then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+          error = new Error(errorMessage);
+        throw error;
+      }
+    });
+    let itineraryToDelete = this.state.itineraries.find(
+      deletedItinerary => deletedItinerary.id === id
+    );
+    let updatedItineraries = this.state.itineraries.filter(
+      item => item !== itineraryToDelete
+    );
+    this.setState({ itineraries: updatedItineraries });
+  }
+
   componentDidMount() {
     fetch(`/api/v1/users/${this.props.params.id}`)
       .then(response => {
@@ -71,7 +99,13 @@ class UserShowContainer extends Component {
 
   render() {
     let itineraries = this.state.itineraries.map(itinerary => {
-      return <ItineraryTile key={itinerary.id} itinerary={itinerary} />;
+      return (
+        <ItineraryTile
+          key={itinerary.id}
+          itinerary={itinerary}
+          onClickDelete={this.onClickDelete}
+        />
+      );
     });
     return (
       <div className="itinerary-tile-container" style={{ height: "800px" }}>
@@ -94,4 +128,3 @@ class UserShowContainer extends Component {
 }
 
 export default UserShowContainer;
-//<div className="user-itineraries">
