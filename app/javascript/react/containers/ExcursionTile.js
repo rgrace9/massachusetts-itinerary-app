@@ -37,6 +37,24 @@ class ExcursionTile extends Component {
     this.handleClear();
   }
 
+  yelpBusinessSearch() {
+    fetch(`/api/v1/cities/${this.props.params.id}/excursions`)
+      .then(response => {
+        if (response.ok) {
+          return response;
+        } else {
+          let errorMessage = `${response.status} (${response.statusText})`,
+            error = new Error(errorMessage);
+          throw error;
+        }
+      })
+      .then(response => response.json())
+      .then(yelpExcursions => {
+        this.setState({ businesses: yelpExcursions.data });
+      })
+      .catch(error => console.log(`Error in fetch: ${error.message}`));
+  }
+
   handleClear() {
     this.setState({
       start_event_time: "",
