@@ -16,4 +16,10 @@ class Api::V1::ExcursionsController < Api::V1::ApiController
     render json: { data: excursion_parser.data, itineraries: itineraries }
   end
 
+  def business
+    # business = params[:business]
+    # business_id = business["yelp_business_id"]
+    render json: { data: excursion_parser.data }
+  end
+
 end

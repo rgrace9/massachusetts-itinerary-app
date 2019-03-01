@@ -30,6 +30,7 @@ resources :excursions, only: :show
     namespace :v1 do
       resources :cities, only: [:show] do
         post "/excursions", to: "excursions#search"
+        get "/excursions", to: "excursions#business"
         get "/businesses", to: "businesses#search"
       end
     end
@@ -53,6 +54,7 @@ resources :excursions, only: :show
   namespace :api do
     namespace :v1 do
       resources :regions, only: [:index, :show]
+      resources :locations, only: :index
   end
 end
 
