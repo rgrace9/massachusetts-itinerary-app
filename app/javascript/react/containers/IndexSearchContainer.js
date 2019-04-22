@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import { Link } from "react-router";
 import CategoryField from "../components/CategoryField";
 import LocationField from "../components/LocationField";
+import Select from 'react-select'
 import ResultsContainer from "./ResultsContainer";
 
+const Option = Select.Option
 class IndexSearchContainer extends Component {
   constructor(props) {
     super(props);
@@ -11,7 +13,9 @@ class IndexSearchContainer extends Component {
       businesses: [],
       itineraries: [],
       query: "",
-      location: ""
+      location: "",
+      locations: [],
+      selectedOption: ''
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -20,6 +24,7 @@ class IndexSearchContainer extends Component {
     this.addEvent = this.addEvent.bind(this);
     this.yelpSearch = this.yelpSearch.bind(this);
   }
+
 
   addEvent(formPayload) {
     fetch("/api/v1/events", {
@@ -75,6 +80,7 @@ class IndexSearchContainer extends Component {
       .catch(error => console.log(`Error in fetch: ${error.message}`));
   }
 
+
   handleChange(event) {
     this.setState({ [event.target.name]: event.target.value });
   }
@@ -83,7 +89,7 @@ class IndexSearchContainer extends Component {
     event.preventDefault();
     let payload = {
       query: this.state.query,
-      location: this.state.location
+      location: this.state.selectedOption
     };
     this.yelpSearch(payload);
     this.handleClear();
@@ -94,6 +100,10 @@ class IndexSearchContainer extends Component {
       query: "",
       location: ""
     });
+  }
+
+  handleLocationChange = selectedOption => {
+    this.setState({ selectedOption: selectedOption });
   }
 
   componentDidMount() {
@@ -114,10 +124,39 @@ class IndexSearchContainer extends Component {
         });
       })
       .catch(error => console.log(`Error in fetch: ${error.message}`));
+      fetch(`/api/v1/locations`)
+      .then(response => {
+        if (response.ok) {
+          return response;
+        } else {
+          let errorMessage = `${response.status} (${response.statusText})`,
+            error = new Error(errorMessage);
+          throw error;
+        }
+      })
+      
+      .then(response => response.json())
+      .then(locations => {
+        let locationsArray = locations.map(location => {
+          let option = {}
+          option['value'] = location.name
+          option['label'] = location.name
+          return option
+        })
+        this.setState({
+          locations: locationsArray
+        });
+      })
   }
 
+
+
+
   render() {
+    const { selectedOption } = this.state;
+
     let results = this.state.businesses.map((business, index) => {
+    
       return (
         <ResultsContainer
           key={business.business_id}
@@ -134,13 +173,14 @@ class IndexSearchContainer extends Component {
             <h2 className="region-index-heading">Search</h2>
             <form onSubmit={this.handleSubmit}>
               <div className="small-6 columns">
-                <input
-                  placeholder="Location"
-                  type="text"
-                  value={this.state.location}
-                  onChange={this.handleChange}
-                  name="location"
-                />
+         
+              <Select
+                placeholder="Location"
+                options={this.state.locations}
+                onChange={this.handleLocationChange}
+                value={selectedOption}
+              />
+            
               </div>
 
               <div className="small-6 columns">
@@ -151,6 +191,7 @@ class IndexSearchContainer extends Component {
                   onChange={this.handleChange}
                   name="query"
                 />
+                
               </div>
               <input type="submit" className="button button-red" />
             </form>
@@ -163,3 +204,13 @@ class IndexSearchContainer extends Component {
 }
 
 export default IndexSearchContainer;
+
+
+
+{/* <input
+placeholder="Location"
+type="text"
+value={this.state.location}
+onChange={this.handleChange}
+name="location"
+/> */}

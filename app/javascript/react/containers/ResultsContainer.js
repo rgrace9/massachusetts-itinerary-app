@@ -14,7 +14,8 @@ class ResultsContainer extends Component {
     this.state = {
       start_event_time: "",
       start_event_day: "",
-      itinerary: itinerary
+      itinerary: itinerary,
+      business: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -32,6 +33,27 @@ class ResultsContainer extends Component {
       itinerary: this.state.itinerary
     };
     this.props.addEvent(formPayload);
+  }
+
+  handleBusinessSearch = () => {
+    fetch(`https://api.yelp.com/v3/businesses/${this.props.business.business_id}`)
+    .then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+          error = new Error(errorMessage);
+        throw error;
+      }
+    })
+    .then(response => response.json())
+    .then(business => {
+      debugger
+      this.setState({
+        business: business
+      });
+    })
+    
   }
   render() {
     return (
@@ -68,6 +90,12 @@ class ResultsContainer extends Component {
             />
           </form>
           <p className="yelp-link">
+          <input
+              type="submit"
+              value="Learn More Info"
+              className="button button-red"
+              onClick={this.handleBusinessSearch}
+            />
             <a href={this.props.business.url} target="_blank">
               Click Here to Learn More
             </a>
